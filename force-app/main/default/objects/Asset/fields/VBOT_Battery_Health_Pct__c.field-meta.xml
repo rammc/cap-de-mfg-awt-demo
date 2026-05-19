@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Battery_Health_Pct__c</fullName>
+    <label>Battery Health (%)</label>
+    <description>Current battery health as a percentage. Read from the latest telemetry record. Used in Use Case 2 (Upgrades) and Use Case 3 (Connected Asset).</description>
+    <inlineHelpText>0 – 100 %. Below 80 % triggers the battery-replacement reasoning.</inlineHelpText>
+    <type>Percent</type>
+    <precision>5</precision>
+    <scale>2</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

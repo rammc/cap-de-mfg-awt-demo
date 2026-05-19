@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+
+        <name>header</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>c:vbotTabPlaceholder</componentName>
+                <identifier>servicePlaceholder</identifier>
+                <componentInstanceProperties>
+                    <name>tabLabel</name>
+                    <value>Service &amp; Warranty</value>
+                </componentInstanceProperties>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>c:vbotTabPlaceholder</componentName>
+                <identifier>upgradesPlaceholder</identifier>
+                <componentInstanceProperties>
+                    <name>tabLabel</name>
+                    <value>Upgrades</value>
+                </componentInstanceProperties>
+            </componentInstance>
+        </itemInstances>
+
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>VBOT Work Order Record Page</masterLabel>
+    <sobjectType>WorkOrder</sobjectType>
+    <template>
+        <name>flexipage:recordHomeTemplateDesktop</name>
+    </template>
+    <type>RecordPage</type>
+</FlexiPage>

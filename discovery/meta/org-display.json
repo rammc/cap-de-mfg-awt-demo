@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "id": "00DWz0000093KppMAE",
+    "apiVersion": "66.0",
+    "accessToken": "00DWz0000093Kpp!AQEAQKa_tPFTeh_pEXQ.u03LqfT5o3gT7WeX5CHHYdWIo8o0B_Lg9dr0nrg2kTkBJD4x_21eK98wf2Nu5Awowj1D_WjUR30a",
+    "instanceUrl": "https://cap-de-mfg-awt-demo-dev-ed.develop.my.salesforce.com",
+    "username": "christopher.ramm@cap-de-mfg-awt-demo.com",
+    "clientId": "PlatformCLI",
+    "connectedStatus": "Connected",
+    "alias": "christopher.ramm@cap-de-mfg-awt-demo.com"
+  },
+  "warnings": [
+    "This command will expose sensitive information that allows for subsequent activity using your current authenticated session.\nSharing this information is equivalent to logging someone in under the current credential, resulting in unintended access and escalation of privilege.\nFor additional information, please review the authorization section of the https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_web_flow.htm."
+  ]
+}

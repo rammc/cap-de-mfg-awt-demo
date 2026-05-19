@@ -1,0 +1,235 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TGLDOA4"
+        },
+        "Name": "sfdc_fieldservice",
+        "Label": "Field Service Integration",
+        "NamespacePrefix": "sfdcInternalInt"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TLO6OAO"
+        },
+        "Name": "FieldServiceAdmin",
+        "Label": "Admin for Field Service",
+        "NamespacePrefix": null
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TLUZOA4"
+        },
+        "Name": "FieldServiceDispatcher",
+        "Label": "Dispatcher for Field Service",
+        "NamespacePrefix": null
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TLWCOA4"
+        },
+        "Name": "FieldServiceServiceResource",
+        "Label": "Service Resource for Field Service",
+        "NamespacePrefix": null
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFhaOAG"
+        },
+        "Name": "EinsteinForManufacturingPsl",
+        "Label": "Einstein For Manufacturing",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TGLBOA4"
+        },
+        "Name": "FieldServiceAgentforceSchedulingSupervisorView",
+        "Label": "Access Agentforce Scheduling Supervisor View",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TLeDOAW"
+        },
+        "Name": "FieldServiceDocumentBuilderDispatcher",
+        "Label": "Field Service Document Builder Dispatcher",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TLeEOAW"
+        },
+        "Name": "FieldServiceDocumentBuilderMobile",
+        "Label": "Field Service Document Builder Mobile",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TLeFOAW"
+        },
+        "Name": "FieldServiceDocumentBuilderStandard",
+        "Label": "Field Service Document Builder Standard",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFfuOAG"
+        },
+        "Name": "FieldServiceMobileStandardPermSet",
+        "Label": "FieldServiceMobileStandardPermSet",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEUMOA4"
+        },
+        "Name": "ManufacturingAccountForecastPsl",
+        "Label": "Manufacturing Account Forecast",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEUBOA4"
+        },
+        "Name": "ManufacturingAccountManagerTargetsPsl",
+        "Label": "Manufacturing Account Manager Targets",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFfoOAG"
+        },
+        "Name": "ManufacturingAdvAccForecastForCmtyPsl",
+        "Label": "Manufacturing Advanced Account Forecast For Community",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEUGOA4"
+        },
+        "Name": "ManufacturingAdvancedAccountForecastPsl",
+        "Label": "Manufacturing Advanced Account Forecast",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEUCOA4"
+        },
+        "Name": "ManufacturingAnalyticsAdmin",
+        "Label": "Manufacturing Analytics Admin",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEULOA4"
+        },
+        "Name": "ManufacturingAnalyticsUser",
+        "Label": "Manufacturing Analytics User",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFhpOAG"
+        },
+        "Name": "ManufacturingFoundationUserPsl",
+        "Label": "Manufacturing Foundation User",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFggOAG"
+        },
+        "Name": "ManufacturingPartnerLeadMgmtPsl",
+        "Label": "Partner Lead Management",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEUAOA4"
+        },
+        "Name": "ManufacturingPartnerPerformanceMgmtPsl",
+        "Label": "Partner Performance Management",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEUFOA4"
+        },
+        "Name": "ManufacturingPartnerVisitMgmtPsl",
+        "Label": "Partner Visit Management",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEU9OAO"
+        },
+        "Name": "ManufacturingProgramBasedBusinessPsl",
+        "Label": "Manufacturing Program Based Business",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFfbOAG"
+        },
+        "Name": "ManufacturingSalesAgreementsForCmtyPsl",
+        "Label": "Manufacturing Sales Agreements For Community",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TEU6OAO"
+        },
+        "Name": "ManufacturingSalesAgreementsPsl",
+        "Label": "Manufacturing Sales Agreements",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFi4OAG"
+        },
+        "Name": "ManufacturingSampleMgmtForCmtyUserPsl",
+        "Label": "Manufacturing Sample Management For Experience Cloud",
+        "NamespacePrefix": "force"
+      },
+      {
+        "attributes": {
+          "type": "PermissionSet",
+          "url": "/services/data/v66.0/sobjects/PermissionSet/0PSWz000002TFi5OAG"
+        },
+        "Name": "ManufacturingSampleMgmtUserPsl",
+        "Label": "Manufacturing Sample Management",
+        "NamespacePrefix": "force"
+      }
+    ],
+    "totalSize": 25,
+    "done": true
+  },
+  "warnings": []
+}

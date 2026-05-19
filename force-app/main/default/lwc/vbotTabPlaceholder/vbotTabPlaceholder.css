@@ -1,0 +1,19 @@
+.placeholder {
+    position: relative;
+    padding: 3rem 1.5rem;
+    min-height: 12rem;
+    border: 1px dashed var(--slds-g-color-border-base-2, #d8dde6);
+    background-color: var(--slds-g-color-surface-container-1, #f7f9fb);
+}
+
+.placeholder__icon {
+    --sds-c-icon-color-background: transparent;
+    --sds-c-icon-color-foreground: var(--slds-g-color-neutral-base-50, #8aa1b4);
+    opacity: 0.85;
+}
+
+.placeholder__spinner {
+    position: relative;
+    margin-top: 1.25rem;
+    opacity: 0.4;
+}

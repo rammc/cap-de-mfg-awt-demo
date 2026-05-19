@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Error_Count__c</fullName>
+    <label>Error Count</label>
+    <description>Number of errors emitted by the device during this sample's interval. Spikes feed the predictive maintenance card.</description>
+    <inlineHelpText>Number of error events in this sample window. Usually 0.</inlineHelpText>
+    <type>Number</type>
+    <precision>3</precision>
+    <scale>0</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

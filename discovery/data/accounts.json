@@ -1,0 +1,28 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v66.0/sobjects/Account/001Wz00000R8od6IAB"
+        },
+        "Id": "001Wz00000R8od6IAB",
+        "Name": "sForce",
+        "BillingCity": "San Francisco"
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v66.0/sobjects/Account/001Wz00000R8od7IAB"
+        },
+        "Id": "001Wz00000R8od7IAB",
+        "Name": "Sample Account for Entitlements",
+        "BillingCity": null
+      }
+    ],
+    "totalSize": 2,
+    "done": true
+  },
+  "warnings": []
+}

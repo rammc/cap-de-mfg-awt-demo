@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>VBOT Tab Placeholder</masterLabel>
+    <description>Placeholder tab body used by VBOT FlexiPages in Phase 1. Replaced phase-by-phase as real LWCs land.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+                name="tabLabel"
+                label="Tab Label"
+                type="String"
+                default="Coming soon"
+                description="Label of the tab this placeholder represents. Echoed back in the body so authors can tell which slot is empty."
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

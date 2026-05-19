@@ -1,0 +1,218 @@
+{
+  "status": 0,
+  "result": {
+    "done": true,
+    "fileProperties": [
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-30T05:49:10.000Z",
+        "fileName": "unpackaged/flexipages/Field_Service_Console_UtilityBar1.flexipage",
+        "fullName": "Field_Service_Console_UtilityBar1",
+        "id": "0M0Wz0000012x9tKAA",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-30T05:49:10.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/IndustriesEcm_UtilityBar.flexipage",
+        "fullName": "IndustriesEcm_UtilityBar",
+        "id": "0M0Wz0000012wAmKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/AcademicOperations_UtilityBar.flexipage",
+        "fullName": "AcademicOperations_UtilityBar",
+        "id": "0M0Wz0000012wAnKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/LightningService_UtilityBar.flexipage",
+        "fullName": "LightningService_UtilityBar",
+        "id": "0M0Wz0000012wAbKAI",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/LightningSalesConsole_UtilityBar.flexipage",
+        "fullName": "LightningSalesConsole_UtilityBar",
+        "id": "0M0Wz0000012wAcKAI",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/ExpressionSetConsole_UtilityBar.flexipage",
+        "fullName": "ExpressionSetConsole_UtilityBar",
+        "id": "0M0Wz0000012wAdKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/LightningSales_UtilityBar.flexipage",
+        "fullName": "LightningSales_UtilityBar",
+        "id": "0M0Wz0000012wAeKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/PricingPulse_UtilityBar.flexipage",
+        "fullName": "PricingPulse_UtilityBar",
+        "id": "0M0Wz0000012wAjKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/SalesCloudMobile_UtilityBar.flexipage",
+        "fullName": "SalesCloudMobile_UtilityBar",
+        "id": "0M0Wz0000012wAkKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000053AkkIAE",
+        "createdByName": "Automated Process",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/flexipages/DataGovernanceConsole_UtilityBar.flexipage",
+        "fullName": "DataGovernanceConsole_UtilityBar",
+        "id": "0M0Wz0000012wAlKAI",
+        "lastModifiedById": "005Wz0000053AkkIAE",
+        "lastModifiedByName": "Automated Process",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "FlexiPage"
+      },
+      {
+        "createdById": "005Wz0000057BGnIAM",
+        "createdByName": "Christopherr Ramm",
+        "createdDate": "2026-05-19T11:19:18.509Z",
+        "fileName": "unpackaged/package.xml",
+        "fullName": "unpackaged/package.xml",
+        "id": "",
+        "lastModifiedById": "005Wz0000057BGnIAM",
+        "lastModifiedByName": "Christopherr Ramm",
+        "lastModifiedDate": "2026-05-19T11:19:18.509Z",
+        "manageableState": "unmanaged",
+        "type": "Package"
+      }
+    ],
+    "id": "09SWz000002P1NxMAK",
+    "status": "Succeeded",
+    "success": true,
+    "messages": [],
+    "files": [
+      {
+        "fullName": "Field_Service_Console_UtilityBar1",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/Field_Service_Console_UtilityBar1.flexipage-meta.xml"
+      },
+      {
+        "fullName": "IndustriesEcm_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/IndustriesEcm_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "AcademicOperations_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/AcademicOperations_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "LightningService_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/LightningService_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "LightningSalesConsole_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/LightningSalesConsole_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "ExpressionSetConsole_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/ExpressionSetConsole_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "LightningSales_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/LightningSales_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "PricingPulse_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/PricingPulse_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "SalesCloudMobile_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/SalesCloudMobile_UtilityBar.flexipage-meta.xml"
+      },
+      {
+        "fullName": "DataGovernanceConsole_UtilityBar",
+        "type": "FlexiPage",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/flexipages/flexipages/DataGovernanceConsole_UtilityBar.flexipage-meta.xml"
+      }
+    ]
+  },
+  "warnings": []
+}

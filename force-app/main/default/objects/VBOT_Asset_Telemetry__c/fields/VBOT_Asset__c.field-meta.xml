@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Asset__c</fullName>
+    <label>Asset</label>
+    <description>Master-detail link to the Asset this telemetry row belongs to. Cascades delete.</description>
+    <inlineHelpText>The asset that emitted this telemetry sample.</inlineHelpText>
+    <type>MasterDetail</type>
+    <referenceTo>Asset</referenceTo>
+    <relationshipName>VBOT_Telemetry_Records</relationshipName>
+    <relationshipLabel>Asset Telemetry</relationshipLabel>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

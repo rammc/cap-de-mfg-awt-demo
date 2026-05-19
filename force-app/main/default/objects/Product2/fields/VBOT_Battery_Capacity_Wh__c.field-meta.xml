@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Battery_Capacity_Wh__c</fullName>
+    <label>Battery Capacity (Wh)</label>
+    <description>Nominal battery capacity of this product variant in watt-hours. Used by the spec-diff comparator.</description>
+    <inlineHelpText>Nominal battery capacity in Wh.</inlineHelpText>
+    <type>Number</type>
+    <precision>6</precision>
+    <scale>0</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

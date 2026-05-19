@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Covers_Sensors__c</fullName>
+    <label>Covers Sensors</label>
+    <description>Whether this VerdantCare tier covers the GPS / lidar / boundary sensors.</description>
+    <inlineHelpText>Coverage flag used by the coverage-gap visualizer to render the matrix.</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

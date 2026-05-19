@@ -1,0 +1,90 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/Asset"
+        },
+        "DurableId": "Asset",
+        "QualifiedApiName": "Asset"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/AssetRelationship"
+        },
+        "DurableId": "AssetRelationship",
+        "QualifiedApiName": "AssetRelationship"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/AssetWarranty"
+        },
+        "DurableId": "AssetWarranty",
+        "QualifiedApiName": "AssetWarranty"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/ContractLineItem"
+        },
+        "DurableId": "ContractLineItem",
+        "QualifiedApiName": "ContractLineItem"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/MaintenancePlan"
+        },
+        "DurableId": "MaintenancePlan",
+        "QualifiedApiName": "MaintenancePlan"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/ProductWarrantyTerm"
+        },
+        "DurableId": "ProductWarrantyTerm",
+        "QualifiedApiName": "ProductWarrantyTerm"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/ServiceContract"
+        },
+        "DurableId": "ServiceContract",
+        "QualifiedApiName": "ServiceContract"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/WarrantyTerm"
+        },
+        "DurableId": "WarrantyTerm",
+        "QualifiedApiName": "WarrantyTerm"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/WorkOrder"
+        },
+        "DurableId": "WorkOrder",
+        "QualifiedApiName": "WorkOrder"
+      },
+      {
+        "attributes": {
+          "type": "EntityDefinition",
+          "url": "/services/data/v66.0/tooling/sobjects/EntityDefinition/WorkOrderLineItem"
+        },
+        "DurableId": "WorkOrderLineItem",
+        "QualifiedApiName": "WorkOrderLineItem"
+      }
+    ],
+    "totalSize": 10,
+    "done": true
+  },
+  "warnings": []
+}

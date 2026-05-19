@@ -1,0 +1,116 @@
+{
+  "status": 0,
+  "result": {
+    "done": true,
+    "fileProperties": [
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-30T05:49:09.000Z",
+        "fileName": "unpackaged/layouts/WorkOrder-Field Service Technician Work Order Layout.layout",
+        "fullName": "WorkOrder-Field Service Technician Work Order Layout",
+        "id": "00hWz000002NVi0IAG",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-30T05:49:09.000Z",
+        "manageableState": "unmanaged",
+        "type": "Layout"
+      },
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-30T05:49:09.000Z",
+        "fileName": "unpackaged/layouts/WorkOrder-System Administrator Work Order Layout.layout",
+        "fullName": "WorkOrder-System Administrator Work Order Layout",
+        "id": "00hWz000002NVi1IAG",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-30T05:49:09.000Z",
+        "manageableState": "unmanaged",
+        "type": "Layout"
+      },
+      {
+        "createdById": "005Wz0000053AkmIAE",
+        "createdByName": "salesforce.com",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/layouts/WorkOrder-Work Order Layout.layout",
+        "fullName": "WorkOrder-Work Order Layout",
+        "id": "00hWz000002NS2XIAW",
+        "lastModifiedById": "005Wz0000053AkmIAE",
+        "lastModifiedByName": "salesforce.com",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "Layout"
+      },
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-30T05:49:09.000Z",
+        "fileName": "unpackaged/layouts/WorkOrder-Field Service Dispatcher Work Order Layout.layout",
+        "fullName": "WorkOrder-Field Service Dispatcher Work Order Layout",
+        "id": "00hWz000002NVhzIAG",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-30T05:49:09.000Z",
+        "manageableState": "unmanaged",
+        "type": "Layout"
+      },
+      {
+        "createdById": "005Wz0000057BGnIAM",
+        "createdByName": "Christopherr Ramm",
+        "createdDate": "2026-05-19T11:18:28.170Z",
+        "fileName": "unpackaged/package.xml",
+        "fullName": "unpackaged/package.xml",
+        "id": "",
+        "lastModifiedById": "005Wz0000057BGnIAM",
+        "lastModifiedByName": "Christopherr Ramm",
+        "lastModifiedDate": "2026-05-19T11:18:28.170Z",
+        "manageableState": "unmanaged",
+        "type": "Package"
+      }
+    ],
+    "id": "09SWz000002P1KjMAK",
+    "messages": [
+      {
+        "fileName": "unpackaged/package.xml",
+        "problem": "Entity of type 'Layout' named 'WorkOrder-FSL Work Order Layout' cannot be found"
+      }
+    ],
+    "status": "Succeeded",
+    "success": true,
+    "files": [
+      {
+        "fullName": "WorkOrder-FSL Work Order Layout",
+        "type": "Layout",
+        "state": "Failed",
+        "error": "Entity of type 'Layout' named 'WorkOrder-FSL Work Order Layout' cannot be found",
+        "problemType": "Error"
+      },
+      {
+        "fullName": "WorkOrder-Field Service Technician Work Order Layout",
+        "type": "Layout",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/layouts/layouts/WorkOrder-Field Service Technician Work Order Layout.layout-meta.xml"
+      },
+      {
+        "fullName": "WorkOrder-System Administrator Work Order Layout",
+        "type": "Layout",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/layouts/layouts/WorkOrder-System Administrator Work Order Layout.layout-meta.xml"
+      },
+      {
+        "fullName": "WorkOrder-Work Order Layout",
+        "type": "Layout",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/layouts/layouts/WorkOrder-Work Order Layout.layout-meta.xml"
+      },
+      {
+        "fullName": "WorkOrder-Field Service Dispatcher Work Order Layout",
+        "type": "Layout",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/layouts/layouts/WorkOrder-Field Service Dispatcher Work Order Layout.layout-meta.xml"
+      }
+    ]
+  },
+  "warnings": []
+}

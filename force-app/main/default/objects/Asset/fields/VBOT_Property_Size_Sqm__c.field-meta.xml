@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Property_Size_Sqm__c</fullName>
+    <label>Property Size (sqm)</label>
+    <description>Customer property size in square meters. Drives the upgrade-recommendation reasoning for Use Case 2 (Upgrades).</description>
+    <inlineHelpText>Size of the lawn or property serviced by this asset (in m²).</inlineHelpText>
+    <type>Number</type>
+    <precision>7</precision>
+    <scale>0</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

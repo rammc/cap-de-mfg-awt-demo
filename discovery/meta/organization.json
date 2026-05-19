@@ -1,0 +1,23 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Organization",
+          "url": "/services/data/v66.0/sobjects/Organization/00DWz0000093KppMAE"
+        },
+        "Id": "00DWz0000093KppMAE",
+        "Name": "Mfg cloud for AWT Demo org.",
+        "OrganizationType": "Developer Edition",
+        "InstanceName": "DEU90",
+        "IsSandbox": false,
+        "TrialExpirationDate": null,
+        "NamespacePrefix": null
+      }
+    ],
+    "totalSize": 1,
+    "done": true
+  },
+  "warnings": []
+}

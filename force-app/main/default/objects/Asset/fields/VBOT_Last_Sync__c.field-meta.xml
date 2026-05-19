@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Last_Sync__c</fullName>
+    <label>Last Sync</label>
+    <description>Timestamp of the last successful telemetry push from the customer mobile app. Powers the "Last sync from Mobile App" indicator on the Connected Asset tab.</description>
+    <inlineHelpText>When the customer's mobile app last delivered telemetry for this asset.</inlineHelpText>
+    <type>DateTime</type>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

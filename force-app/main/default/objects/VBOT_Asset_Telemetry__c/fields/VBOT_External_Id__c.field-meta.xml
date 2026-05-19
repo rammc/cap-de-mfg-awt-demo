@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_External_Id__c</fullName>
+    <label>External Id</label>
+    <description>Idempotency key for the seed script. Pattern: TEL-{assetId}-{yyyyMMdd}. Lets the seed Apex upsert telemetry without producing duplicates.</description>
+    <inlineHelpText>Used by the seed script to upsert telemetry idempotently. Do not edit manually.</inlineHelpText>
+    <type>Text</type>
+    <length>40</length>
+    <required>false</required>
+    <unique>true</unique>
+    <caseSensitive>false</caseSensitive>
+    <externalId>true</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

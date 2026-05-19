@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Mobile_App_Enabled__c</fullName>
+    <label>Mobile App Enabled</label>
+    <description>True when the customer's headless mobile app is paired with this asset and streams telemetry. Drives the Headless 360 storytelling on the Connected Asset tab.</description>
+    <inlineHelpText>Indicates whether telemetry sync from the customer mobile app is active.</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>true</defaultValue>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Operating_Hours__c</fullName>
+    <label>Operating Hours</label>
+    <description>Operating hours accumulated in this sample's interval. Used for the usage timeline and predictive maintenance hints.</description>
+    <inlineHelpText>Hours of active mowing in this sample window.</inlineHelpText>
+    <type>Number</type>
+    <precision>5</precision>
+    <scale>1</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

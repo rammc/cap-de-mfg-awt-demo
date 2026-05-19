@@ -1,0 +1,19 @@
+total 72
+drwxr-xr-x   18 christopherramm  staff   576 19 Mai 13:12 .
+drwxr-xr-x+ 114 christopherramm  staff  3648 19 Mai 13:11 ..
+-rw-r--r--    1 christopherramm  staff   365 19 Mai 10:12 .forceignore
+drwxr-xr-x   13 christopherramm  staff   416 19 Mai 13:09 .git
+-rw-r--r--    1 christopherramm  staff   823 19 Mai 10:12 .gitignore
+drwxr-xr-x    3 christopherramm  staff    96 19 Mai 10:12 .husky
+-rw-r--r--    1 christopherramm  staff   200 19 Mai 10:12 .prettierignore
+-rw-r--r--    1 christopherramm  staff   303 19 Mai 10:12 .prettierrc
+drwxr-xr-x    5 christopherramm  staff   160 19 Mai 10:12 .vscode
+drwxr-xr-x    3 christopherramm  staff    96 19 Mai 10:12 config
+drwxr-xr-x    9 christopherramm  staff   288 19 Mai 13:12 discovery
+-rw-r--r--    1 christopherramm  staff  1433 19 Mai 10:12 eslint.config.js
+drwxr-xr-x    3 christopherramm  staff    96 19 Mai 10:12 force-app
+-rw-r--r--    1 christopherramm  staff   170 19 Mai 10:12 jest.config.js
+-rw-r--r--    1 christopherramm  staff  1480 19 Mai 10:12 package.json
+-rw-r--r--    1 christopherramm  staff  1251 19 Mai 10:12 README.md
+drwxr-xr-x    4 christopherramm  staff   128 19 Mai 10:12 scripts
+-rw-r--r--    1 christopherramm  staff   215 19 Mai 10:12 sfdx-project.json

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Demo_Scenario__c</fullName>
+    <label>Demo Scenario</label>
+    <description>Stable identifier for a scripted demo scenario. Lets list views and LWCs target the right demo record (e.g. BATTERY_REPLACEMENT_001).</description>
+    <inlineHelpText>Demo identifier such as BATTERY_REPLACEMENT_001. Leave empty for non-demo records.</inlineHelpText>
+    <type>Text</type>
+    <length>40</length>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

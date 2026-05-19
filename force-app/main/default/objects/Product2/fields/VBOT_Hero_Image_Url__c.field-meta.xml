@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Hero_Image_Url__c</fullName>
+    <label>Hero Image URL</label>
+    <description>Public URL for the product hero image rendered in the upgrade recommendation grid.</description>
+    <inlineHelpText>Absolute URL to the product hero image (PNG/JPG, ideally 800x500).</inlineHelpText>
+    <type>Url</type>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

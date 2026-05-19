@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Firmware_Version__c</fullName>
+    <label>Firmware Version</label>
+    <description>Firmware version currently running on the asset. Displayed in the Connected Asset header.</description>
+    <inlineHelpText>Semantic version string, e.g. "3.4.1".</inlineHelpText>
+    <type>Text</type>
+    <length>20</length>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

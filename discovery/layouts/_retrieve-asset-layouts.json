@@ -1,0 +1,47 @@
+{
+  "status": 0,
+  "result": {
+    "done": true,
+    "fileProperties": [
+      {
+        "createdById": "005Wz0000053Aj7IAE",
+        "createdByName": "Chetan Chugh",
+        "createdDate": "2026-04-29T14:39:57.000Z",
+        "fileName": "unpackaged/layouts/Asset-Asset Layout.layout",
+        "fullName": "Asset-Asset Layout",
+        "id": "00hWz000002NTEUIA4",
+        "lastModifiedById": "005Wz0000053Aj7IAE",
+        "lastModifiedByName": "Chetan Chugh",
+        "lastModifiedDate": "2026-04-29T14:39:57.000Z",
+        "manageableState": "unmanaged",
+        "type": "Layout"
+      },
+      {
+        "createdById": "005Wz0000057BGnIAM",
+        "createdByName": "Christopherr Ramm",
+        "createdDate": "2026-05-19T11:18:55.371Z",
+        "fileName": "unpackaged/package.xml",
+        "fullName": "unpackaged/package.xml",
+        "id": "",
+        "lastModifiedById": "005Wz0000057BGnIAM",
+        "lastModifiedByName": "Christopherr Ramm",
+        "lastModifiedDate": "2026-05-19T11:18:55.371Z",
+        "manageableState": "unmanaged",
+        "type": "Package"
+      }
+    ],
+    "id": "09SWz000002P1MLMA0",
+    "status": "Succeeded",
+    "success": true,
+    "messages": [],
+    "files": [
+      {
+        "fullName": "Asset-Asset Layout",
+        "type": "Layout",
+        "state": "Created",
+        "filePath": "/Users/christopherramm/cap-de-mfg-awt-demo/discovery/layouts/layouts/Asset-Asset Layout.layout-meta.xml"
+      }
+    ]
+  },
+  "warnings": []
+}

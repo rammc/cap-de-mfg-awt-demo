@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Is_Template__c</fullName>
+    <label>Is Template</label>
+    <description>Marks a ServiceContract record as a non-assigned tier template (Plus, Premium). Templates are shown alongside the active contract for upsell comparison; they are not real customer contracts.</description>
+    <inlineHelpText>Check for Plus / Premium template offers. Uncheck for the customer's actually active contract.</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>
