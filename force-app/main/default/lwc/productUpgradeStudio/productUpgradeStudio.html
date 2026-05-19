@@ -1,0 +1,57 @@
+<template>
+    <section class="panel">
+        <header class="panel__header">
+            <h2 class="panel__title">{headerTitle}</h2>
+            <p class="panel__subtitle">{headerSubtitle}</p>
+        </header>
+
+        <template lwc:if={loading}>
+            <div class="skeleton">
+                <div class="skeleton__banner"></div>
+                <div class="skeleton__cards">
+                    <div class="skeleton__card"></div>
+                    <div class="skeleton__card"></div>
+                    <div class="skeleton__card"></div>
+                </div>
+                <div class="skeleton__reasoning"></div>
+            </div>
+        </template>
+
+        <template lwc:if={error}>
+            <div class="error-state" role="alert">
+                <lightning-icon icon-name="utility:error" variant="error" size="small"></lightning-icon>
+                <span>Upgrade-Daten konnten nicht geladen werden.</span>
+                <lightning-button label="Erneut laden" variant="neutral" onclick={handleRetry}></lightning-button>
+            </div>
+        </template>
+
+        <template lwc:if={hasData}>
+            <c-asset-context-banner asset={data.asset}></c-asset-context-banner>
+
+            <c-upgrade-recommendation-grid
+                options={data.options}
+                oncomparespecs={handleCompare}
+                onaddtoquote={handleAddToQuote}
+            ></c-upgrade-recommendation-grid>
+
+            <c-reasoning-explainer reasoning={data.reasoning}></c-reasoning-explainer>
+        </template>
+
+        <c-spec-diff-comparator
+            is-open={diffOpen}
+            current-product={data.currentProduct}
+            selected-upgrade={selectedUpgrade}
+            onclose={handleCloseDiff}
+            onaddtoquote={handleAddToQuote}
+        ></c-spec-diff-comparator>
+
+        <c-quote-cart-flyout
+            is-open={cartOpen}
+            items={cartItems}
+            customer={customerLabel}
+            onclose={handleCloseCart}
+            onremoveitem={handleRemoveItem}
+            onsendquote={handleSendQuote}
+        ></c-quote-cart-flyout>
+    </section>
+</template>

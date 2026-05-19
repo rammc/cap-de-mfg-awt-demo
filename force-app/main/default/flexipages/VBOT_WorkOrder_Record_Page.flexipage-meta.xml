@@ -19,20 +19,8 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>c:vbotTabPlaceholder</componentName>
-                <identifier>upgradesPlaceholderInstance</identifier>
-                <componentInstanceProperties>
-                    <name>tabLabel</name>
-                    <value>Upgrades</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>variant</name>
-                    <value>upgrades</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>phaseLabel</name>
-                    <value>Phase 3</value>
-                </componentInstanceProperties>
+                <componentName>c:productUpgradeStudio</componentName>
+                <identifier>productUpgradeStudioInstance</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

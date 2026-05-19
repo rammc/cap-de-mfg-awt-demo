@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Quote Cart Flyout</masterLabel>
+    <description>Narrow right-slide flyout with selected upgrade items + summary + send CTA. Used by productUpgradeStudio.</description>
+</LightningComponentBundle>

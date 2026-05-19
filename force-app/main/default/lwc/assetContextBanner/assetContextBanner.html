@@ -1,0 +1,26 @@
+<template>
+    <article class="banner">
+        <div class="banner__image">
+            <template lwc:if={hasImage}>
+                <img src={asset.productImageUrl} alt={asset.productName} class="banner__img" />
+            </template>
+            <template lwc:else>
+                <div class="banner__fallback">
+                    <lightning-icon icon-name="utility:product" size="medium" alternative-text={asset.productName}></lightning-icon>
+                </div>
+            </template>
+        </div>
+
+        <div class="banner__meta">
+            <h3 class="banner__name">{asset.name}</h3>
+            <p class="banner__product">{asset.productName}</p>
+            <p class="banner__sub">{installedText}</p>
+        </div>
+
+        <div class="banner__pills" role="list">
+            <span class="pill" role="listitem">{propertyPill}</span>
+            <span class="pill" role="listitem">{batteryPill}</span>
+            <span class="pill" role="listitem">{firmwarePill}</span>
+        </div>
+    </article>
+</template>

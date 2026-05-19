@@ -1,0 +1,71 @@
+<template>
+    <div class={scrimClass} onclick={handleScrim}>
+        <aside class={flyoutClass} role="dialog" aria-label="Quote-Vorschau">
+            <header class="header">
+                <h2 class="header__title">Quote-Vorschau</h2>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    alternative-text="Schließen"
+                    onclick={handleClose}
+                    variant="bare"
+                ></lightning-button-icon>
+            </header>
+
+            <p class="customer-pill">{customer}</p>
+
+            <div class="items">
+                <template lwc:if={isEmpty}>
+                    <div class="empty">
+                        <lightning-icon icon-name="utility:cart" size="medium" alternative-text=""></lightning-icon>
+                        <p>Noch keine Upgrades hinzugefügt</p>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <ul class="item-list" role="list">
+                        <template for:each={rows} for:item="row">
+                            <li key={row.key} class="item">
+                                <div class="item__thumb">
+                                    <template lwc:if={row.hasImage}>
+                                        <img src={row.heroImageUrl} alt={row.name} />
+                                    </template>
+                                    <template lwc:else>
+                                        <lightning-icon icon-name="utility:product" size="small" alternative-text=""></lightning-icon>
+                                    </template>
+                                </div>
+                                <div class="item__meta">
+                                    <span class="item__name">{row.name}</span>
+                                    <span class="item__price">{row.price}</span>
+                                </div>
+                                <lightning-button-icon
+                                    icon-name="utility:close"
+                                    alternative-text="Entfernen"
+                                    size="small"
+                                    variant="bare"
+                                    data-product-id={row.productId}
+                                    onclick={handleRemove}
+                                ></lightning-button-icon>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+            </div>
+
+            <div class="summary">
+                <div class="summary__row">
+                    <span>Positionen</span>
+                    <span>{itemCount}</span>
+                </div>
+                <div class="summary__row summary__row_total">
+                    <span>Zwischensumme</span>
+                    <span>{subtotal}</span>
+                </div>
+                <p class="summary__hint">inkl. MwSt.</p>
+            </div>
+
+            <footer class="footer">
+                <lightning-button label="Speichern" variant="neutral"></lightning-button>
+                <lightning-button label="An Kunde senden" variant="brand" onclick={handleSend} disabled={isEmpty}></lightning-button>
+            </footer>
+        </aside>
+    </div>
+</template>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Asset Context Banner</masterLabel>
+    <description>Hero banner showing product image + asset summary + key context pills. Used by productUpgradeStudio.</description>
+</LightningComponentBundle>

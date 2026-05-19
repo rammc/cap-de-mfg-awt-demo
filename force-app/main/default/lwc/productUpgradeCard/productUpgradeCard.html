@@ -1,0 +1,44 @@
+<template>
+    <article class={cardClass}>
+        <template lwc:if={option.isRecommended}>
+            <div class="fit-badge">{fitBadgeText}</div>
+        </template>
+
+        <header class="card__header">
+            <span class={tierBadgeClass}>{option.tier}</span>
+            <h3 class="card__title">{option.name}</h3>
+        </header>
+
+        <div class="hero">
+            <template lwc:if={hasImage}>
+                <img src={option.heroImageUrl} alt={option.name} class="hero__img" />
+            </template>
+            <template lwc:else>
+                <lightning-icon icon-name="utility:product" size="medium" alternative-text={option.name}></lightning-icon>
+            </template>
+        </div>
+
+        <div class="price">{priceLabel}</div>
+
+        <ul class="specs" role="list">
+            <template for:each={specRows} for:item="spec">
+                <li key={spec.key} class={spec.cls}>
+                    <lightning-icon icon-name={spec.iconName} variant={spec.iconVariant} size="x-small" alternative-text={spec.label}></lightning-icon>
+                    <span class="spec__label">{spec.label}</span>
+                    <span class="spec__value">{spec.value}</span>
+                </li>
+            </template>
+        </ul>
+
+        <ul class="value-props" role="list">
+            <template for:each={valueProps} for:item="v">
+                <li key={v.key}>{v.text}</li>
+            </template>
+        </ul>
+
+        <footer class="card__footer">
+            <lightning-button label="Vergleichen" variant="neutral" onclick={handleCompare} class="footer__btn"></lightning-button>
+            <lightning-button label={option.ctaLabel} variant="brand" onclick={handleAddToQuote} class="footer__btn footer__btn_primary"></lightning-button>
+        </footer>
+    </article>
+</template>

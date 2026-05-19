@@ -1,0 +1,48 @@
+<template>
+    <div class={scrimClass} onclick={handleScrim}>
+        <aside class={drawerClass} role="dialog" aria-label="Spec-Vergleich">
+            <header class="header">
+                <h2 class="header__title">{headerText}</h2>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    alternative-text="Schließen"
+                    onclick={handleClose}
+                    variant="bare"
+                ></lightning-button-icon>
+            </header>
+
+            <div class="body">
+                <table class="diff-table">
+                    <thead>
+                        <tr>
+                            <th class="diff-table__feature">Eigenschaft</th>
+                            <th class="diff-table__current">Aktuell</th>
+                            <th class="diff-table__upgrade">Upgrade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={rows} for:item="row">
+                            <tr key={row.key}>
+                                <th class="diff-table__feature" scope="row">{row.label}</th>
+                                <td class="diff-table__current">{row.current}</td>
+                                <td class="diff-table__upgrade">
+                                    <span class={row.diffCls}>
+                                        <template lwc:if={row.diffPrefix}>
+                                            <span class="diff__prefix">{row.diffPrefix}</span>
+                                        </template>
+                                        <span>{row.upgrade}</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <footer class="footer">
+                <lightning-button label="Schließen" variant="neutral" onclick={handleClose}></lightning-button>
+                <lightning-button label="Zu Quote hinzufügen" variant="brand" onclick={handleAddToQuote}></lightning-button>
+            </footer>
+        </aside>
+    </div>
+</template>

@@ -1,0 +1,7 @@
+<template>
+    <div class="grid">
+        <template for:each={options} for:item="opt">
+            <c-product-upgrade-card key={opt.productId} option={opt} class="grid__cell"></c-product-upgrade-card>
+        </template>
+    </div>
+</template>

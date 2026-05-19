@@ -1,0 +1,95 @@
+:host {
+    --cg-vibrant-blue: #0070AD;
+    --cg-velocity-blue: #12ABDB;
+    --cg-deep-purple: #2B1A47;
+    --cg-charcoal: #1F2A37;
+    --cg-grey-100: #F4F5F7;
+    --cg-grey-200: #E5E7EB;
+    --cg-grey-300: #D1D5DB;
+    --cg-radius: 12px;
+    display: block;
+}
+
+.reasoning {
+    position: relative;
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    background: var(--slds-g-color-surface-1, #FFFFFF);
+    border: 1px solid var(--cg-grey-200);
+    border-left: 4px solid var(--cg-vibrant-blue);
+    border-radius: var(--cg-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.reasoning__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.reasoning__icon {
+    --sds-c-icon-color-foreground-default: var(--cg-velocity-blue);
+}
+.reasoning__headline {
+    margin: 0;
+    flex: 1 1 auto;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cg-deep-purple);
+}
+.reasoning__ai-pill {
+    background: var(--cg-velocity-blue);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.reasoning__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.bullet {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    align-items: start;
+    gap: 0.55rem;
+    font-size: 0.88rem;
+    color: var(--cg-charcoal);
+    --sds-c-icon-color-foreground-default: var(--cg-vibrant-blue);
+}
+
+.confidence {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.confidence__bar {
+    flex: 1 1 auto;
+    height: 6px;
+    background: var(--cg-grey-200);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.confidence__fill {
+    height: 100%;
+    background: var(--cg-vibrant-blue);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+.confidence__label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--cg-deep-purple);
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .reasoning__header { flex-wrap: wrap; }
+}

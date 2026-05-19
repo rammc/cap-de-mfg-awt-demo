@@ -1,0 +1,25 @@
+<template>
+    <article class="reasoning">
+        <header class="reasoning__header">
+            <lightning-icon icon-name="utility:einstein" size="small" alternative-text="AI" class="reasoning__icon"></lightning-icon>
+            <h3 class="reasoning__headline">{headline}</h3>
+            <span class="reasoning__ai-pill">AI-generated</span>
+        </header>
+
+        <ul class="reasoning__bullets" role="list">
+            <template for:each={bullets} for:item="b">
+                <li key={b.key} class="bullet">
+                    <lightning-icon icon-name={b.icon} size="x-small" alternative-text=""></lightning-icon>
+                    <span>{b.text}</span>
+                </li>
+            </template>
+        </ul>
+
+        <div class="confidence">
+            <div class="confidence__bar">
+                <div class="confidence__fill" style={barStyle}></div>
+            </div>
+            <span class="confidence__label">{confidenceLabel}</span>
+        </div>
+    </article>
+</template>
