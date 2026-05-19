@@ -1,0 +1,55 @@
+<template>
+    <div class={scrimClass} onclick={handleScrim}>
+        <aside class={drawerClass} role="dialog" aria-label="Vertragsvergleich">
+            <header class="header">
+                <h2 class="header__title">Vertragsvergleich</h2>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    alternative-text="Schließen"
+                    onclick={handleClose}
+                    variant="bare"
+                ></lightning-button-icon>
+            </header>
+
+            <div class="body">
+                <table class="cmp-table">
+                    <thead>
+                        <tr>
+                            <th class="cmp-table__feature">Leistung</th>
+                            <template for:each={tierColumns} for:item="col">
+                                <th key={col.key} class={col.cls}>
+                                    {col.tier}
+                                    <template lwc:if={col.isRecommended}>
+                                        <span class="rec-pill">Empfohlen</span>
+                                    </template>
+                                </th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={featureRows} for:item="row">
+                            <tr key={row.key}>
+                                <th class="cmp-table__feature" scope="row">{row.label}</th>
+                                <template for:each={row.cells} for:item="cell">
+                                    <td key={cell.key} class={cell.cls}>
+                                        <template lwc:if={cell.isIcon}>
+                                            <lightning-icon
+                                                icon-name={cell.iconName}
+                                                variant={cell.iconVariant}
+                                                size="x-small"
+                                                alternative-text={cell.text}
+                                            ></lightning-icon>
+                                        </template>
+                                        <template lwc:else>
+                                            <span>{cell.text}</span>
+                                        </template>
+                                    </td>
+                                </template>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </aside>
+    </div>
+</template>

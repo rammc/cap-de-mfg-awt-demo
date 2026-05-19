@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>VBOT Warranty Advisor Panel</masterLabel>
+    <description>Phase-2 wrapper LWC: shows coverage gap visualizer + 3 contract option cards on a WorkOrder. Orchestrates compare-drawer, e-signature modal and confirmation toast.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>

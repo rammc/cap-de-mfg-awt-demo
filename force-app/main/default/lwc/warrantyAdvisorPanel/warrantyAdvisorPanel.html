@@ -1,0 +1,67 @@
+<template>
+    <section class="panel">
+        <header class="panel__header">
+            <div>
+                <h2 class="panel__title">{headerTitle}</h2>
+                <p class="panel__subtitle">{headerSubtitle}</p>
+            </div>
+            <div class="cycle-toggle" role="group" aria-label="Abrechnungsintervall">
+                <lightning-button label="Monatlich" variant={monthlyBtnVariant} onclick={handleSetMonthly}></lightning-button>
+                <lightning-button label="Jährlich" variant={yearlyBtnVariant} onclick={handleSetYearly}></lightning-button>
+            </div>
+        </header>
+
+        <template lwc:if={loading}>
+            <div class="skeleton-row">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+        </template>
+
+        <template lwc:if={error}>
+            <div class="error-state" role="alert">
+                <lightning-icon icon-name="utility:error" variant="error" size="small"></lightning-icon>
+                <span>Daten konnten nicht geladen werden.</span>
+                <lightning-button label="Erneut laden" variant="neutral" onclick={handleRetry}></lightning-button>
+            </div>
+        </template>
+
+        <template lwc:if={hasData}>
+            <c-coverage-gap-visualizer coverages={data.coverages}></c-coverage-gap-visualizer>
+
+            <div class="card-row">
+                <template for:each={options} for:item="opt">
+                    <c-contract-option-card
+                        key={opt.contractId}
+                        contract={opt}
+                        billing-cycle={billingCycle}
+                        oncomparecontracts={handleCompare}
+                        onselectcontract={handleSelect}
+                    ></c-contract-option-card>
+                </template>
+            </div>
+        </template>
+
+        <c-contract-comparison-drawer
+            is-open={comparisonOpen}
+            contracts={options}
+            onclose={handleCloseCompare}
+        ></c-contract-comparison-drawer>
+
+        <c-e-signature-preview
+            is-open={signatureOpen}
+            contract={selectedContract}
+            customer={customerName}
+            billing-cycle={billingCycle}
+            onclose={handleCloseSignature}
+            onsignaturecomplete={handleSignatureComplete}
+        ></c-e-signature-preview>
+
+        <c-contract-confirmation-toast
+            is-visible={toastVisible}
+            contract-name={confirmedContractName}
+            ondismiss={handleToastDismiss}
+        ></c-contract-confirmation-toast>
+    </section>
+</template>

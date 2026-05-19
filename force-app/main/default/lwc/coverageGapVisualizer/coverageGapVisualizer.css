@@ -1,0 +1,90 @@
+:host {
+    --cg-vibrant-blue: #0070AD;
+    --cg-velocity-blue: #12ABDB;
+    --cg-deep-purple: #2B1A47;
+    --cg-charcoal: #1F2A37;
+    --cg-grey-100: #F4F5F7;
+    --cg-grey-200: #E5E7EB;
+    --cg-grey-300: #D1D5DB;
+    --cg-amber: #F59E0B;
+    --cg-critical: #D4351C;
+    --cg-radius: 12px;
+    display: block;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    padding: 1rem 0.5rem;
+    border-radius: var(--cg-radius);
+    background: var(--cg-grey-100);
+    border: 1px solid var(--cg-grey-200);
+    min-height: 110px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+.tile__icon {
+    --sds-c-icon-color-foreground-default: var(--cg-charcoal);
+}
+.tile__label {
+    font-weight: 600;
+    color: var(--cg-deep-purple);
+    font-size: 0.875rem;
+}
+.tile__sub {
+    color: var(--cg-charcoal);
+    opacity: 0.7;
+    font-size: 0.75rem;
+}
+
+.tile_covered {
+    border-color: var(--cg-velocity-blue);
+    background: var(--slds-g-color-surface-1, #FFFFFF);
+}
+.tile_covered .tile__icon {
+    --sds-c-icon-color-foreground-default: var(--cg-velocity-blue);
+}
+
+.tile_partial {
+    border-color: var(--cg-amber);
+    background: rgba(245, 158, 11, 0.08);
+}
+.tile_partial .tile__icon {
+    --sds-c-icon-color-foreground-default: var(--cg-amber);
+}
+
+.tile_uncovered {
+    border-color: var(--cg-critical);
+    background: rgba(212, 53, 28, 0.08);
+    animation: vbot-pulse 2.4s ease-in-out infinite;
+}
+.tile_uncovered .tile__icon {
+    --sds-c-icon-color-foreground-default: var(--cg-critical);
+}
+@keyframes vbot-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 53, 28, 0); }
+    50% { box-shadow: 0 0 0 4px rgba(212, 53, 28, 0.18); }
+}
+
+.tile_expiring {
+    border-color: var(--cg-charcoal);
+}
+.tile_expiring .tile__icon {
+    --sds-c-icon-color-foreground-default: var(--cg-charcoal);
+}
+
+@media (max-width: 768px) {
+    .row { grid-template-columns: repeat(2, 1fr); }
+}

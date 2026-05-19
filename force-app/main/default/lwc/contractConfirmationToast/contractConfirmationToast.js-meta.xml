@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Contract Confirmation Toast</masterLabel>
+    <description>Full-overlay success card with animated check icon. Auto-dismisses after 4s. Used by warrantyAdvisorPanel.</description>
+</LightningComponentBundle>

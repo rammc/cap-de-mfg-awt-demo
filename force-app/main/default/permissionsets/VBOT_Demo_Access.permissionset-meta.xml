@@ -5,6 +5,11 @@
     <hasActivationRequired>false</hasActivationRequired>
     <license>Salesforce</license>
 
+    <classAccesses>
+        <apexClass>WarrantyAdvisorController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+
     <objectPermissions>
         <object>VBOT_Asset_Telemetry__c</object>
         <allowCreate>true</allowCreate>

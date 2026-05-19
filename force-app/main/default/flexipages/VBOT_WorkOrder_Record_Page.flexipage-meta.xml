@@ -13,20 +13,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>c:vbotTabPlaceholder</componentName>
-                <identifier>warrantyPlaceholderInstance</identifier>
-                <componentInstanceProperties>
-                    <name>tabLabel</name>
-                    <value>Service &amp; Warranty</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>variant</name>
-                    <value>service-warranty</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>phaseLabel</name>
-                    <value>Phase 2</value>
-                </componentInstanceProperties>
+                <componentName>c:warrantyAdvisorPanel</componentName>
+                <identifier>warrantyAdvisorInstance</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

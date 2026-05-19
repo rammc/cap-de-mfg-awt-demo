@@ -1,0 +1,33 @@
+<template>
+    <div class={rootClass} role="dialog" aria-label="Signatur" onclick={handleScrim}>
+        <div class="modal">
+            <header class="modal__header">
+                <h2 class="modal__title">Servicevertrag-Upgrade bestätigen</h2>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    alternative-text="Abbrechen"
+                    onclick={handleCancel}
+                    variant="bare"
+                ></lightning-button-icon>
+            </header>
+
+            <p class="modal__summary">{summary}</p>
+
+            <div class="canvas-wrap">
+                <canvas
+                    class="canvas"
+                    onpointerdown={handlePointerDown}
+                    onpointermove={handlePointerMove}
+                    onpointerup={handlePointerUp}
+                    onpointerleave={handlePointerUp}
+                ></canvas>
+                <button type="button" class="link" onclick={handleClear}>Signatur löschen</button>
+            </div>
+
+            <footer class="modal__footer">
+                <lightning-button label="Abbrechen" variant="neutral" onclick={handleCancel}></lightning-button>
+                <lightning-button label="Bestätigen &amp; Signieren" variant="brand" onclick={handleConfirm} disabled={confirmDisabled}></lightning-button>
+            </footer>
+        </div>
+    </div>
+</template>

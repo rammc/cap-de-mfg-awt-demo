@@ -1,0 +1,31 @@
+<template>
+    <article class={cardClass}>
+        <template lwc:if={showRecommendedBadge}>
+            <div class="recommended-badge">EMPFOHLEN</div>
+        </template>
+
+        <header class="card__header">
+            <span class={tierBadgeClass}>{contract.tier}</span>
+            <h3 class="card__title">{contract.name}</h3>
+        </header>
+
+        <div class="price-block">
+            <span class="price-block__value">{priceLabel}</span>
+            <span class="price-block__cycle">{cycleLabel}</span>
+        </div>
+
+        <ul class="coverage-list" role="list">
+            <template for:each={coverageRows} for:item="row">
+                <li key={row.key} class={row.cls}>
+                    <lightning-icon icon-name={row.iconName} variant={row.iconVariant} size="x-small" alternative-text={row.label}></lightning-icon>
+                    <span>{row.label}</span>
+                </li>
+            </template>
+        </ul>
+
+        <footer class="card__footer">
+            <lightning-button label="Vergleichen" variant="neutral" onclick={handleCompare} class="footer__btn"></lightning-button>
+            <lightning-button label={contract.ctaLabel} variant="brand" onclick={handleSelect} class="footer__btn footer__btn_primary"></lightning-button>
+        </footer>
+    </article>
+</template>

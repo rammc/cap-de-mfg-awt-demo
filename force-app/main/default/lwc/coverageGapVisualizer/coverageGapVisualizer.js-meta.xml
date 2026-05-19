@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Coverage Gap Visualizer</masterLabel>
+    <description>4-tile coverage strip showing covered/partial/uncovered/expiring status. Used by warrantyAdvisorPanel.</description>
+</LightningComponentBundle>

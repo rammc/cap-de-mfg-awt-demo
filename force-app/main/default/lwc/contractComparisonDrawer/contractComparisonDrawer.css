@@ -1,0 +1,107 @@
+:host {
+    --cg-vibrant-blue: #0070AD;
+    --cg-velocity-blue: #12ABDB;
+    --cg-deep-purple: #2B1A47;
+    --cg-charcoal: #1F2A37;
+    --cg-grey-100: #F4F5F7;
+    --cg-grey-200: #E5E7EB;
+    --cg-grey-300: #D1D5DB;
+    display: block;
+}
+
+.scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0);
+    pointer-events: none;
+    transition: background 0.22s ease;
+    z-index: 9000;
+}
+.scrim_open {
+    background: rgba(15, 23, 42, 0.4);
+    pointer-events: auto;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(680px, 100%);
+    background: var(--slds-g-color-surface-1, #FFFFFF);
+    border-left: 1px solid var(--cg-grey-200);
+    box-shadow: -16px 0 40px rgba(15, 23, 42, 0.18);
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    z-index: 9001;
+}
+.drawer_open { transform: translateX(0); }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--cg-grey-200);
+}
+.header__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cg-deep-purple);
+}
+
+.body {
+    overflow: auto;
+    padding: 1rem 1.25rem 1.5rem;
+}
+
+.cmp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    color: var(--cg-charcoal);
+}
+.cmp-table th,
+.cmp-table td {
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--cg-grey-200);
+    vertical-align: middle;
+}
+.cmp-table__feature {
+    text-align: left;
+    font-weight: 600;
+    color: var(--cg-deep-purple);
+}
+.col {
+    font-weight: 700;
+    color: var(--cg-deep-purple);
+}
+.col_recommended {
+    background: rgba(0, 112, 173, 0.06);
+    color: var(--cg-vibrant-blue);
+}
+.rec-pill {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--cg-vibrant-blue);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    vertical-align: middle;
+}
+.cell { font-weight: 500; }
+.cell_yes { color: var(--cg-velocity-blue); }
+.cell_no { color: var(--cg-grey-300); }
+
+@media (max-width: 768px) {
+    .drawer { width: 100%; }
+    .body { padding: 1rem 0.75rem; }
+    .cmp-table { font-size: 0.75rem; }
+}
