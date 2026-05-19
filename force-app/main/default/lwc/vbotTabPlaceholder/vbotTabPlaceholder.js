@@ -1,5 +1,12 @@
 import { LightningElement, api } from 'lwc';
 
+const VARIANT_LABELS = {
+    'service-warranty': 'Service & Warranty',
+    upgrades: 'Upgrades',
+    'connected-asset': 'Connected Asset',
+    generic: 'Coming soon'
+};
+
 export default class VbotTabPlaceholder extends LightningElement {
     @api tabLabel = 'Coming soon';
     @api variant = 'auto';
@@ -14,6 +21,13 @@ export default class VbotTabPlaceholder extends LightningElement {
         if (label.includes('upgrade') || label.includes('sales')) return 'upgrades';
         if (label.includes('connected') || label.includes('asset') || label.includes('telemetry')) return 'connected-asset';
         return 'generic';
+    }
+
+    get displayLabel() {
+        if (this.tabLabel && this.tabLabel !== 'Coming soon') {
+            return this.tabLabel;
+        }
+        return VARIANT_LABELS[this.resolvedVariant] || 'Coming soon';
     }
 
     get isServiceWarranty() {
