@@ -70,9 +70,10 @@
 
 .banner__pills {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.4rem;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
 }
 .pill {
     background: var(--cg-grey-100);
