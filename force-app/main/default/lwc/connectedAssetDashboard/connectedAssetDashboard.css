@@ -1,0 +1,110 @@
+:host {
+    --cg-vibrant-blue: #0070AD;
+    --cg-velocity-blue: #12ABDB;
+    --cg-deep-purple: #2B1A47;
+    --cg-charcoal: #1F2A37;
+    --cg-grey-100: #F4F5F7;
+    --cg-grey-200: #E5E7EB;
+    --cg-grey-300: #D1D5DB;
+    --cg-radius: 12px;
+    display: block;
+}
+
+.dashboard {
+    padding: 1.5rem;
+    background: var(--slds-g-color-surface-1, #FFFFFF);
+    border-radius: var(--cg-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.dashboard__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.dashboard__title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cg-deep-purple);
+}
+.dashboard__subtitle {
+    margin: 0.25rem 0 0;
+    font-size: 0.85rem;
+    color: var(--cg-charcoal);
+    opacity: 0.7;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 1.25rem;
+    align-items: start;
+}
+.grid__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+}
+.grid__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+.grid__side {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    max-height: 720px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.skeleton__row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+.skeleton__row_two { grid-template-columns: 1fr 1fr; }
+.skeleton__tile, .skeleton__block, .skeleton__chart {
+    background: var(--cg-grey-100);
+    border: 1px solid var(--cg-grey-200);
+    border-radius: var(--cg-radius);
+}
+.skeleton__tile { min-height: 150px; }
+.skeleton__chart { min-height: 240px; }
+.skeleton__block { min-height: 220px; }
+
+.error-state {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: rgba(212, 53, 28, 0.06);
+    border: 1px solid rgba(212, 53, 28, 0.3);
+    border-radius: var(--cg-radius);
+    color: var(--cg-charcoal);
+}
+
+@media (max-width: 1024px) {
+    .grid { grid-template-columns: 1fr; }
+    .grid__side { position: static; max-height: none; }
+    .grid__row { grid-template-columns: 1fr; }
+    .skeleton__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+    .skeleton__row { grid-template-columns: 1fr; }
+    .skeleton__row_two { grid-template-columns: 1fr; }
+}

@@ -13,20 +13,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>c:vbotTabPlaceholder</componentName>
-                <identifier>connectedAssetPlaceholderInstance</identifier>
-                <componentInstanceProperties>
-                    <name>tabLabel</name>
-                    <value>Connected Asset</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>variant</name>
-                    <value>connected-asset</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>phaseLabel</name>
-                    <value>Phase 4</value>
-                </componentInstanceProperties>
+                <componentName>c:connectedAssetDashboard</componentName>
+                <identifier>connectedAssetDashboardInstance</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

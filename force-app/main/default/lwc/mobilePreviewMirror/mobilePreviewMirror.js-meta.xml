@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Mobile Preview Mirror</masterLabel>
+    <description>iPhone-frame SVG that mirrors what the customer sees in the VerdantBot mobile app. Uses the same lawn zones as lawnHealthMap. Used by connectedAssetDashboard.</description>
+</LightningComponentBundle>

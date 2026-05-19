@@ -1,0 +1,19 @@
+<template>
+    <div class="bar" role="status" aria-live="polite">
+        <div class="block">
+            <span class="dot dot_pulse"></span>
+            <span class="block__label">{mobileLabel}</span>
+        </div>
+        <div class="block">
+            <span class="dot dot_pulse"></span>
+            <span class="block__label">{portalLabel}</span>
+        </div>
+        <div class="channels" role="list">
+            <template for:each={channelHints} for:item="c">
+                <span key={c.key} class="channel" role="listitem" title={c.alt}>
+                    <lightning-icon icon-name={c.icon} size="x-small" alternative-text={c.alt}></lightning-icon>
+                </span>
+            </template>
+        </div>
+    </div>
+</template>

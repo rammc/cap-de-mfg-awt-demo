@@ -1,0 +1,78 @@
+<template>
+    <article class="chart-card">
+        <header class="chart__header">
+            <div class="chart__heading">
+                <h3 class="chart__title">Nutzungsverlauf</h3>
+                <span class="chart__metric-label">{metricLabel}</span>
+            </div>
+            <div class="chart__controls">
+                <div class="seg seg_metric" role="group" aria-label="Metrik">
+                    <template for:each={metricButtons} for:item="btn">
+                        <lightning-button
+                            key={btn.key}
+                            label={btn.label}
+                            variant={btn.variant}
+                            data-metric={btn.value}
+                            onclick={handleMetricClick}
+                        ></lightning-button>
+                    </template>
+                </div>
+                <div class="seg seg_range" role="group" aria-label="Zeitraum">
+                    <template for:each={rangePills} for:item="pill">
+                        <lightning-button
+                            key={pill.key}
+                            label={pill.label}
+                            variant={pill.variant}
+                            data-range={pill.value}
+                            onclick={handleRangeClick}
+                        ></lightning-button>
+                    </template>
+                </div>
+            </div>
+        </header>
+
+        <div class="chart__svg-wrap">
+            <svg class="chart-svg" viewBox={viewBox} preserveAspectRatio="none" role="img" aria-label="Telemetrie-Verlauf">
+                <template for:each={yAxisLines} for:item="line">
+                    <g key={line.key}>
+                        <line x1={line.xStart} y1={line.y} x2={line.xEnd} y2={line.y} class="grid-line"></line>
+                        <text x="10" y={line.y} class="axis-label axis-label_y" dominant-baseline="middle">{line.label}</text>
+                    </g>
+                </template>
+
+                <polygon points={polygonPoints} class="area-fill"></polygon>
+                <polyline points={polylinePoints} class="line"></polyline>
+
+                <template for:each={series} for:item="p">
+                    <circle
+                        key={p.index}
+                        cx={p.x} cy={p.y} r="4"
+                        class="point"
+                        data-idx={p.index}
+                        onmouseenter={handlePointEnter}
+                        onmouseleave={handlePointLeave}
+                    ></circle>
+                </template>
+
+                <template for:each={xAxisLabels} for:item="lbl">
+                    <text key={lbl.key} x={lbl.x} y={lbl.y} class="axis-label axis-label_x" text-anchor="middle">{lbl.label}</text>
+                </template>
+
+                <template lwc:if={tooltip}>
+                    <g class="tooltip" transform={tooltip.transform}>
+                        <rect x={tooltip.x} y={tooltip.y} rx="6" ry="6" width="160" height="32" class="tooltip__rect"></rect>
+                        <text x={tooltip.x} y={tooltip.y} dx="80" dy="20" class="tooltip__text" text-anchor="middle">{tooltip.text}</text>
+                    </g>
+                </template>
+            </svg>
+        </div>
+
+        <footer class="chart__footer">
+            <span>Ø {average}</span>
+            <span class="trend">
+                <lightning-icon icon-name={trendIcon} variant={trendVariant} size="x-small" alternative-text={trendDirection}></lightning-icon>
+                <span>{trendDirection}</span>
+            </span>
+        </footer>
+    </article>
+</template>

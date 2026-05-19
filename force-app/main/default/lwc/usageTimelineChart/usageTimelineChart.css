@@ -1,0 +1,79 @@
+:host {
+    --cg-vibrant-blue: #0070AD;
+    --cg-velocity-blue: #12ABDB;
+    --cg-deep-purple: #2B1A47;
+    --cg-charcoal: #1F2A37;
+    --cg-grey-100: #F4F5F7;
+    --cg-grey-200: #E5E7EB;
+    --cg-grey-300: #D1D5DB;
+    --cg-radius: 12px;
+    display: block;
+}
+
+.chart-card {
+    padding: 1.25rem;
+    background: var(--slds-g-color-surface-1, #FFFFFF);
+    border: 1px solid var(--cg-grey-200);
+    border-radius: var(--cg-radius);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.chart__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.chart__heading { display: flex; flex-direction: column; gap: 0.15rem; }
+.chart__title { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--cg-deep-purple); }
+.chart__metric-label { font-size: 0.78rem; color: var(--cg-charcoal); opacity: 0.65; }
+
+.chart__controls { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.seg { display: inline-flex; gap: 0.25rem; padding: 0.2rem; background: var(--cg-grey-100); border-radius: 999px; }
+
+.chart__svg-wrap { width: 100%; }
+.chart-svg { width: 100%; height: 240px; display: block; }
+
+.grid-line { stroke: var(--cg-grey-200); stroke-width: 1; }
+.axis-label { fill: var(--cg-charcoal); opacity: 0.65; font-size: 11px; }
+.axis-label_y { font-size: 10px; }
+
+.area-fill { fill: var(--cg-vibrant-blue); opacity: 0.15; transition: opacity 0.3s ease; }
+.line {
+    stroke: var(--cg-vibrant-blue);
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.point {
+    fill: var(--cg-vibrant-blue);
+    stroke: var(--slds-g-color-surface-1, #FFFFFF);
+    stroke-width: 1.5;
+    cursor: pointer;
+    transition: r 0.15s ease;
+}
+.point:hover { r: 6; }
+
+.tooltip__rect { fill: var(--cg-deep-purple); opacity: 0.95; }
+.tooltip__text { fill: white; font-size: 11px; font-weight: 500; }
+
+.chart__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--cg-charcoal);
+    border-top: 1px dashed var(--cg-grey-200);
+    padding-top: 0.6rem;
+}
+.trend { display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; color: var(--cg-deep-purple); }
+
+@media (max-width: 768px) {
+    .chart__header { flex-direction: column; align-items: stretch; }
+    .chart__controls { justify-content: flex-start; }
+}

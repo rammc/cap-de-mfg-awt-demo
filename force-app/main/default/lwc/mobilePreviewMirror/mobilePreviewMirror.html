@@ -1,0 +1,74 @@
+<template>
+    <div class="phone">
+        <div class="phone__frame">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>●●●●</span>
+                </div>
+
+                <header class="app-header">
+                    <lightning-icon icon-name="utility:einstein" size="x-small" alternative-text="VBOT" class="app-header__logo"></lightning-icon>
+                    <span class="app-header__title">VerdantBot</span>
+                </header>
+
+                <div class="battery-block">
+                    <svg viewBox="0 0 120 120" class="battery-donut" role="img" aria-label={batteryLabel}>
+                        <circle cx="60" cy="60" r="54" stroke="#E5E7EB" stroke-width="10" fill="none"></circle>
+                        <circle
+                            cx="60" cy="60" r="54"
+                            stroke="#0070AD" stroke-width="10" fill="none"
+                            stroke-dasharray="339"
+                            stroke-dashoffset={batteryDashOffset}
+                            transform="rotate(-90 60 60)"
+                            stroke-linecap="round"
+                        ></circle>
+                        <text x="60" y="60" class="battery-donut__value" text-anchor="middle" dominant-baseline="central">{batteryLabel}</text>
+                        <text x="60" y="80" class="battery-donut__caption" text-anchor="middle">Akku</text>
+                    </svg>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="quick-stat">
+                        <span class="quick-stat__value">{mowedTodayLabel}</span>
+                        <span class="quick-stat__label">Heute gemäht</span>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="quick-stat__value">{nextMowLabel}</span>
+                        <span class="quick-stat__label">Nächster Plan</span>
+                    </div>
+                </div>
+
+                <div class="lawn">
+                    <span class="lawn__caption">Mein Rasen</span>
+                    <svg viewBox="0 0 400 240" class="lawn-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Rasen-Zonen">
+                        <rect x="0" y="0" width="400" height="240" fill="#E8F4DC" opacity="0.6" rx="8"></rect>
+                        <template for:each={zones} for:item="z">
+                            <rect
+                                key={z.id}
+                                x={z.x} y={z.y}
+                                width={z.width} height={z.height}
+                                fill={z.fill}
+                                fill-opacity={z.opacity}
+                                rx="6"
+                            ></rect>
+                        </template>
+                    </svg>
+                </div>
+
+                <div class="reminder">
+                    <span class="reminder__icon">⏰</span>
+                    <span class="reminder__text">{contractText}</span>
+                    <span class="reminder__cta">Verlängern</span>
+                </div>
+
+                <button type="button" class="chat-bubble" aria-label="Chat">
+                    <lightning-icon icon-name="utility:chat" size="small" alternative-text="Chat"></lightning-icon>
+                    <span class="chat-bubble__badge">1</span>
+                </button>
+            </div>
+        </div>
+        <p class="phone__caption">Was Anna in der Mobile App sieht</p>
+    </div>
+</template>

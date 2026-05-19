@@ -1,0 +1,53 @@
+<template>
+    <section class="dashboard" onscheduleappointment={handleScheduleAppointment} onrangechange={handleRangeChange}>
+        <header class="dashboard__header">
+            <div>
+                <h2 class="dashboard__title">{headerTitle}</h2>
+                <p class="dashboard__subtitle">{headerSubtitle}</p>
+            </div>
+            <template lwc:if={hasData}>
+                <c-headless-sync-indicator sync-status={syncStatus}></c-headless-sync-indicator>
+            </template>
+        </header>
+
+        <template lwc:if={loading}>
+            <div class="skeleton">
+                <div class="skeleton__row">
+                    <div class="skeleton__tile"></div>
+                    <div class="skeleton__tile"></div>
+                    <div class="skeleton__tile"></div>
+                    <div class="skeleton__tile"></div>
+                </div>
+                <div class="skeleton__chart"></div>
+                <div class="skeleton__row skeleton__row_two">
+                    <div class="skeleton__block"></div>
+                    <div class="skeleton__block"></div>
+                </div>
+            </div>
+        </template>
+
+        <template lwc:if={error}>
+            <div class="error-state" role="alert">
+                <lightning-icon icon-name="utility:error" variant="error" size="small"></lightning-icon>
+                <span>Telemetrie konnte nicht geladen werden.</span>
+                <lightning-button label="Erneut laden" variant="neutral" onclick={handleRetry}></lightning-button>
+            </div>
+        </template>
+
+        <template lwc:if={hasData}>
+            <div class="grid">
+                <div class="grid__main">
+                    <c-asset-health-header kpis={kpis}></c-asset-health-header>
+                    <c-usage-timeline-chart points={timeline} range={range}></c-usage-timeline-chart>
+                    <div class="grid__row">
+                        <c-lawn-health-map zones={lawnZones} property-size-sqm={propertySize}></c-lawn-health-map>
+                        <c-predictive-maintenance-card forecast={forecast}></c-predictive-maintenance-card>
+                    </div>
+                </div>
+                <aside class="grid__side">
+                    <c-mobile-preview-mirror mirror-data={mobileMirror}></c-mobile-preview-mirror>
+                </aside>
+            </div>
+        </template>
+    </section>
+</template>

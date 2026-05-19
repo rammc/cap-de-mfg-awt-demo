@@ -1,0 +1,194 @@
+:host {
+    --cg-vibrant-blue: #0070AD;
+    --cg-velocity-blue: #12ABDB;
+    --cg-deep-purple: #2B1A47;
+    --cg-charcoal: #1F2A37;
+    --cg-grey-100: #F4F5F7;
+    --cg-grey-200: #E5E7EB;
+    --cg-grey-300: #D1D5DB;
+    --cg-radius: 12px;
+    display: block;
+}
+
+.phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.phone__frame {
+    width: 280px;
+    background: #111827;
+    border-radius: 40px;
+    padding: 14px;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.28), inset 0 0 0 2px #1F2937;
+    position: relative;
+}
+
+.phone__notch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 18px;
+    background: #111827;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 2;
+}
+
+.phone__screen {
+    position: relative;
+    background: var(--slds-g-color-surface-1, #FFFFFF);
+    border-radius: 28px;
+    padding: 20px 16px 18px;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    overflow: hidden;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    color: var(--cg-charcoal);
+    opacity: 0.45;
+    padding: 0 8px;
+    letter-spacing: 1px;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+    --sds-c-icon-color-foreground-default: var(--cg-velocity-blue);
+}
+.app-header__title {
+    font-weight: 700;
+    color: var(--cg-deep-purple);
+    font-size: 0.95rem;
+}
+
+.battery-block {
+    display: flex;
+    justify-content: center;
+}
+.battery-donut { width: 140px; height: 140px; }
+.battery-donut__value {
+    fill: var(--cg-deep-purple);
+    font-size: 22px;
+    font-weight: 700;
+}
+.battery-donut__caption {
+    fill: var(--cg-charcoal);
+    opacity: 0.6;
+    font-size: 10px;
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+.quick-stat {
+    background: var(--cg-grey-100);
+    border-radius: 10px;
+    padding: 0.5rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quick-stat__value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--cg-deep-purple);
+}
+.quick-stat__label {
+    font-size: 0.65rem;
+    color: var(--cg-charcoal);
+    opacity: 0.6;
+}
+
+.lawn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.lawn__caption {
+    font-size: 0.7rem;
+    color: var(--cg-charcoal);
+    opacity: 0.7;
+    font-weight: 600;
+}
+.lawn-svg {
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+
+.reminder {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    background: var(--cg-velocity-blue);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+.reminder__icon { font-size: 1rem; }
+.reminder__cta {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.65rem;
+}
+
+.chat-bubble {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--cg-velocity-blue);
+    border: none;
+    box-shadow: 0 6px 18px rgba(18, 171, 219, 0.45);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --sds-c-icon-color-foreground-default: white;
+}
+.chat-bubble__badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #D4351C;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.phone__caption {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--cg-charcoal);
+    opacity: 0.65;
+    font-style: italic;
+}

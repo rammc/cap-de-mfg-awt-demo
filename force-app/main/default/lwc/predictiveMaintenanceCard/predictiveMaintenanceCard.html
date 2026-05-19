@@ -1,0 +1,38 @@
+<template>
+    <article class="pm-card">
+        <header class="pm__header">
+            <lightning-icon icon-name="utility:einstein" size="small" alternative-text="AI" class="pm__icon"></lightning-icon>
+            <h3 class="pm__title">{headline}</h3>
+            <span class="pm__ai-pill">AI-generated</span>
+        </header>
+
+        <div class="hero">
+            <span class="hero__days">{daysUntil}</span>
+            <span class="hero__caption">Tage bis zum nächsten Service</span>
+        </div>
+
+        <div class="date-row">
+            <lightning-icon icon-name="utility:event" size="x-small" alternative-text=""></lightning-icon>
+            <span>{predictedDateLabel}</span>
+        </div>
+
+        <ul class="reasons" role="list">
+            <template for:each={reasoning} for:item="r">
+                <li key={r.key}>{r.text}</li>
+            </template>
+        </ul>
+
+        <div class="suggestion">
+            <span class="suggestion__label">Empfehlung</span>
+            <span class="suggestion__text">{suggestedAction}</span>
+            <lightning-button label="Termin vorschlagen" variant="brand" onclick={handleSchedule}></lightning-button>
+        </div>
+
+        <div class="confidence">
+            <div class="confidence__bar">
+                <div class="confidence__fill" style={barStyle}></div>
+            </div>
+            <span class="confidence__label">{confidenceLabel}</span>
+        </div>
+    </article>
+</template>

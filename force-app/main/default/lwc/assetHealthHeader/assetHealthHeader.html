@@ -1,0 +1,38 @@
+<template>
+    <div class="row" role="list">
+        <template for:each={tiles} for:item="t">
+            <article key={t.key} class={t.cls} role="listitem">
+                <template lwc:if={t.showDonut}>
+                    <div class="donut-wrap">
+                        <svg class="donut" viewBox="0 0 80 80" role="img" aria-label={t.donutText}>
+                            <circle class="donut__bg" cx="40" cy="40" r="36" stroke-width="8" fill="none"></circle>
+                            <circle
+                                class="donut__fg"
+                                cx="40" cy="40" r="36" stroke-width="8" fill="none"
+                                stroke-dasharray="226"
+                                stroke-dashoffset={t.donutDashOffset}
+                                transform="rotate(-90 40 40)"
+                                stroke-linecap="round"
+                            ></circle>
+                        </svg>
+                        <span class="tile__value tile__value_donut">{t.donutText}</span>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <span class="tile__value">{t.value}<span class="tile__unit">{t.unit}</span></span>
+                </template>
+
+                <span class="tile__label">{t.label}</span>
+
+                <template lwc:if={t.statusPill}>
+                    <span class={t.statusPill.cls}>{t.statusPill.label}</span>
+                </template>
+                <template lwc:else>
+                    <span class="tile__trend">
+                        <lightning-icon icon-name={t.trendIcon} variant={t.trendVariant} size="x-small" alternative-text={t.trend}></lightning-icon>
+                    </span>
+                </template>
+            </article>
+        </template>
+    </div>
+</template>

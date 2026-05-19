@@ -13,6 +13,10 @@
         <apexClass>ProductUpgradeController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>AssetTelemetryController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 
     <objectPermissions>
         <object>VBOT_Asset_Telemetry__c</object>

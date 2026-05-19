@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Headless Sync Indicator</masterLabel>
+    <description>Slim status bar showing mobile/portal sync state with pulsing dots and channel icons. Used by connectedAssetDashboard.</description>
+</LightningComponentBundle>

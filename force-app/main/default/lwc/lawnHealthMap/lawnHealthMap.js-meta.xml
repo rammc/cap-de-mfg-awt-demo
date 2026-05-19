@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Lawn Health Map</masterLabel>
+    <description>SVG lawn map with colored zones. Coordinates are shared with mobilePreviewMirror via the Apex DTO. Used by connectedAssetDashboard.</description>
+</LightningComponentBundle>

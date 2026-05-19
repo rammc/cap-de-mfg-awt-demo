@@ -1,0 +1,47 @@
+<template>
+    <article class="map-card">
+        <header class="map__header">
+            <h3 class="map__title">Rasen-Gesundheit</h3>
+            <div class="legend" role="list">
+                <span class="legend__item" role="listitem"><span class="dot dot_ok"></span>Optimal</span>
+                <span class="legend__item" role="listitem"><span class="dot dot_warn"></span>Belastet</span>
+                <span class="legend__item" role="listitem"><span class="dot dot_critical"></span>Beschädigt</span>
+            </div>
+        </header>
+
+        <div class="map__svg-wrap">
+            <svg class="map-svg" viewBox="0 0 400 240" role="img" aria-label="Rasen-Zonen">
+                <defs>
+                    <pattern id="lawnGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#D1D5DB" stroke-width="0.5" opacity="0.4"></path>
+                    </pattern>
+                </defs>
+
+                <rect x="0" y="0" width="400" height="240" fill="#E8F4DC" opacity="0.5"></rect>
+                <rect x="0" y="0" width="400" height="240" fill="url(#lawnGrid)"></rect>
+                <rect x="2" y="2" width="396" height="236" fill="none" stroke="#5A8F3E" stroke-width="2" rx="4"></rect>
+
+                <template for:each={decoratedZones} for:item="z">
+                    <g key={z.id}>
+                        <rect
+                            x={z.x} y={z.y}
+                            width={z.width} height={z.height}
+                            fill={z.fill}
+                            fill-opacity={z.opacity}
+                            stroke="#1F2A37"
+                            stroke-opacity="0.25"
+                            stroke-width="1"
+                            rx="6"
+                        ></rect>
+                        <text x={z.labelX} y={z.labelY} text-anchor="middle" class="zone-label">{z.label}</text>
+                        <text x={z.labelX} y={z.scoreY} text-anchor="middle" class="zone-score">{z.healthScore}</text>
+                    </g>
+                </template>
+            </svg>
+        </div>
+
+        <footer class="map__footer">
+            Grundstück {sizeLabel} · {zoneCount} Zonen · letzte Analyse: {lastAnalyzed}
+        </footer>
+    </article>
+</template>
