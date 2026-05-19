@@ -34,6 +34,9 @@ export default class ProductUpgradeStudio extends LightningElement {
         if (!this.data) return '';
         return [this.data.accountName, this.data.contactName].filter(Boolean).join(' · ');
     }
+    get currentProduct() {
+        return this.data?.currentProduct;
+    }
 
     handleCompare(event) {
         const id = event.detail?.productId;
