@@ -4,10 +4,9 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:highlightsPanel</componentName>
-                <identifier>force_highlightsPanel</identifier>
+                <identifier>highlightsPanelInstance</identifier>
             </componentInstance>
         </itemInstances>
-
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -15,14 +14,21 @@
         <itemInstances>
             <componentInstance>
                 <componentName>c:vbotTabPlaceholder</componentName>
-                <identifier>connectedAssetPlaceholder</identifier>
+                <identifier>connectedAssetPlaceholderInstance</identifier>
                 <componentInstanceProperties>
                     <name>tabLabel</name>
                     <value>Connected Asset</value>
                 </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>connected-asset</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>phaseLabel</name>
+                    <value>Phase 4</value>
+                </componentInstanceProperties>
             </componentInstance>
         </itemInstances>
-
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

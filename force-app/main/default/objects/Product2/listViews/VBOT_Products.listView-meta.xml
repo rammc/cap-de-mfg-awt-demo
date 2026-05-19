@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBOT_Products</fullName>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>VBOT_Tier_Label__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </filters>
+    <label>VBOT Products</label>
+</ListView>

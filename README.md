@@ -47,31 +47,49 @@ PricebookEntries → Products → Contact → Account). Metadata bleibt unangeta
 sf apex run --file scripts/apex/reset-vbot-demo.apex --target-org <alias>
 ```
 
-## Bekannte Phase-1-Abweichungen von der Spec
+## Stand nach Phase 1.5
 
-- **FlexiPages ohne Tabset:** Die Tabset-Struktur (`flexipage:tabset` mit JSON-encoded
-  Tabs) ist über reine Metadata-API in dieser Org-Edition nicht zuverlässig
-  deploybar. Wir liefern stattdessen 1-Column-Pages mit gestapelten Komponenten:
-  Highlights-Panel + LWC-Placeholder(s). Tabs werden in Phase 2 nachgereicht,
-  sobald ein echter LWC eingebaut wird (via UI Builder, dann re-retrieve).
-- **List Views nur teilweise deployed:** `VBOT_Customers` (Account) und
-  `VBOT_Assets` (Asset) sind deployed; `VBOT_Products`, `VBOT_Service_Contracts`
-  und `VBOT_Work_Orders` mussten herausgenommen werden, weil die SF-ListView-XML
-  in dieser Org-Edition die Filter-Field-Tokens (`PRODUCT2.PRODUCTCODE`,
-  `SERVICE_CONTRACT.NAME`, `WORK_ORDER.VBOT_DEMO_SCENARIO__C`) nicht resolved
-  hat. Workaround: List Views bei Bedarf in der UI anlegen und retrieve.
-- **Sidebar-Komponenten weggelassen:** `runtime_sales_activities:activitiesPanel`
-  und `runtime_chatter:feedContainer` sind in der Developer Edition nicht
-  verfügbar – Sidebar bleibt leer; das Page-Template zeigt den Standard-Inhalt.
-- **`Record Details`-Komponente:** `flexipage:recordDetailComponent` und
-  `flexipage:relatedListContainer` waren in der Org nicht über XML-Deploy
-  ansprechbar. Record-Felder werden über das Highlights-Panel im Header
-  sichtbar gemacht; Related Lists werden in Phase 2 (per UI) ergänzt.
+- **vbotTabPlaceholder** rendert drei unterscheidbare Wireframe-Varianten (Service &
+  Warranty mit Coverage-Tiles + 3 Contract-Cards · Upgrades mit Asset-Banner + 3
+  Produkt-Cards + Reasoning-Block · Connected Asset mit 4 KPI-Donuts + Line-Chart
+  + Lawn-Map). Shimmer-Animation, Capgemini-Brand-Farben über CSS-Variablen.
+  Variant wird per `tabLabel` auto-erkannt oder explizit gesetzt.
+- **WorkOrder Record Page** rendert Highlights-Panel + 2 Placeholder
+  (Service & Warranty + Upgrades) gestapelt; **Asset Record Page** Highlights +
+  Connected Asset Placeholder.
+- **Alle 5 ListViews** sind deployed: `VBOT_Customers` (Account),
+  `VBOT_Assets` (Asset), `VBOT_Products` (Product2), `VBOT_Service_Contracts`
+  (ServiceContract), `VBOT_Work_Orders` (WorkOrder).
+
+## Bekannte Abweichungen von der Spec (Phase 1 & 1.5)
+
+- **FlexiPage-Tabsets verschoben:** `flexipage:tabset` mit JSON-tabs-Property
+  ließ sich in dieser Developer Edition nicht deployen — Fehler
+  „facet … defined but not actually used", egal ob Tab-Content-Regionen als
+  `Region` oder `Facet` definiert sind und unabhängig von der `flexipage:record*`
+  Detail-Komponente (`recordDetailComponent`, `recordDetailPanel`,
+  `recordFullSizeForm`, `recordHighlightsAndDetails` — alle „couldn't retrieve
+  the design time component information"). Lösung Phase 1.5: 1-Column-Page mit
+  polishen Placeholder-Wireframes, Highlights-Panel zeigt die wichtigen
+  Record-Felder. Tabset-Bau bleibt für eine spätere Phase im UI Builder.
+- **ListView-Filter via Standard-Feld nicht möglich:** Nur Custom-Fields
+  (`VBOT_*__c`) und die Tokens `ACCOUNT.NAME` / `ASSET.NAME` resolven in dieser
+  Edition als Filter-Field. Product2 + ServiceContract ListViews nutzen darum
+  Custom-Field-Filter (`VBOT_Tier_Label__c not equal ""` bzw. `VBOT_Tier__c not
+  equal ""`) – semantisch identisch zum Spec-Filter „nur VBOT-Records".
+- **ListView columns weggelassen:** Keine Variante (`NAME`, `Name`,
+  `Product2.Name`, `PRODUCT.NAME`, `PRODUCT2.NAME`) deployt – ListView fällt auf
+  Org-Default-Spalten zurück. Anpassung via UI ist trivial und persistiert beim
+  nächsten Retrieve.
+- **Sidebar-Komponenten:** `runtime_sales_activities:activitiesPanel` und
+  `runtime_chatter:feedContainer` sind in der Developer Edition nicht
+  deploybar. Sidebar bleibt leer.
 
 ## Phase-Status
 
 - [x] Phase 1: Setup, Datenmodell, Demo-Daten, Permission Set, Placeholder-Pages
-- [ ] Phase 2: LWCs Service & Warranty + Tabset im FlexiPage XML
+- [x] Phase 1.5: Polished Wireframe-Placeholder, 5/5 ListViews
+- [ ] Phase 2: LWCs Service & Warranty (ggf. Tabset via UI Builder)
 - [ ] Phase 3: LWCs Upgrades
 - [ ] Phase 4: LWCs Connected Asset + Mobile-Mockup
 - [ ] Phase 5: Polish, Backup-Screenshots, Demo-Skript

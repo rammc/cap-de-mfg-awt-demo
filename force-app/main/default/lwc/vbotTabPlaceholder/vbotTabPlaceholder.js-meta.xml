@@ -3,7 +3,7 @@
     <apiVersion>66.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>VBOT Tab Placeholder</masterLabel>
-    <description>Placeholder tab body used by VBOT FlexiPages in Phase 1. Replaced phase-by-phase as real LWCs land.</description>
+    <description>Wireframe-style placeholder used by VBOT FlexiPages. Variant auto-derives from the tabLabel; phaseLabel renders the cosmetic badge. Replaced phase-by-phase as real LWCs land.</description>
     <targets>
         <target>lightning__RecordPage</target>
     </targets>
@@ -14,7 +14,21 @@
                 label="Tab Label"
                 type="String"
                 default="Coming soon"
-                description="Label of the tab this placeholder represents. Echoed back in the body so authors can tell which slot is empty."
+                description="Label shown in heading; also drives which wireframe variant is rendered."
+            />
+            <property
+                name="variant"
+                label="Wireframe Variant"
+                type="String"
+                default="auto"
+                description="One of: auto, service-warranty, upgrades, connected-asset, generic. 'auto' derives from tabLabel."
+            />
+            <property
+                name="phaseLabel"
+                label="Phase Label"
+                type="String"
+                default="Phase 2"
+                description="Cosmetic phase marker shown in the corner badge."
             />
         </targetConfig>
     </targetConfigs>

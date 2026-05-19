@@ -4,10 +4,9 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:highlightsPanel</componentName>
-                <identifier>force_highlightsPanel</identifier>
+                <identifier>highlightsPanelInstance</identifier>
             </componentInstance>
         </itemInstances>
-
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -15,24 +14,39 @@
         <itemInstances>
             <componentInstance>
                 <componentName>c:vbotTabPlaceholder</componentName>
-                <identifier>servicePlaceholder</identifier>
+                <identifier>warrantyPlaceholderInstance</identifier>
                 <componentInstanceProperties>
                     <name>tabLabel</name>
                     <value>Service &amp; Warranty</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>service-warranty</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>phaseLabel</name>
+                    <value>Phase 2</value>
                 </componentInstanceProperties>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>c:vbotTabPlaceholder</componentName>
-                <identifier>upgradesPlaceholder</identifier>
+                <identifier>upgradesPlaceholderInstance</identifier>
                 <componentInstanceProperties>
                     <name>tabLabel</name>
                     <value>Upgrades</value>
                 </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>upgrades</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>phaseLabel</name>
+                    <value>Phase 3</value>
+                </componentInstanceProperties>
             </componentInstance>
         </itemInstances>
-
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

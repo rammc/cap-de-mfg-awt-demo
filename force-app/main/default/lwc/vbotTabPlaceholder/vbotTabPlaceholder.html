@@ -1,23 +1,163 @@
 <template>
-    <div class="placeholder slds-box slds-theme_shade slds-text-align_center">
-        <lightning-icon
-            icon-name="utility:settings"
-            alternative-text="Placeholder"
-            size="medium"
-            variant="inverse"
-            class="placeholder__icon"
-        ></lightning-icon>
-        <p class="slds-text-heading_small slds-m-top_small">
-            ⚙ Coming in a later phase – {tabLabel}
-        </p>
-        <p class="slds-text-body_small slds-text-color_weak slds-m-top_x-small">
-            This tab is wired up but its component will land in a follow-up phase.
-        </p>
-        <lightning-spinner
-            alternative-text="Pending"
-            size="small"
-            variant="brand"
-            class="placeholder__spinner"
-        ></lightning-spinner>
+    <div class="vbot-placeholder">
+        <div class="vbot-header">
+            <div class="vbot-title-row">
+                <span class="vbot-title">{tabLabel}</span>
+                <span class="vbot-phase-badge">{phaseLabel} preview</span>
+            </div>
+            <p class="vbot-subtitle">Wireframe preview – live component lands in a follow-up phase.</p>
+        </div>
+
+        <template lwc:if={isServiceWarranty}>
+            <div class="vbot-wireframe">
+                <div class="vbot-coverage-row">
+                    <div class="vbot-coverage-tile vbot-skel">
+                        <div class="vbot-coverage-icon vbot-skel-dot"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                    <div class="vbot-coverage-tile vbot-skel">
+                        <div class="vbot-coverage-icon vbot-skel-dot"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                    <div class="vbot-coverage-tile vbot-skel">
+                        <div class="vbot-coverage-icon vbot-skel-dot"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                    <div class="vbot-coverage-tile vbot-skel">
+                        <div class="vbot-coverage-icon vbot-skel-dot"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                </div>
+                <div class="vbot-card-row">
+                    <div class="vbot-card vbot-skel">
+                        <div class="vbot-card-header"></div>
+                        <div class="vbot-card-price"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-card-cta"></div>
+                    </div>
+                    <div class="vbot-card vbot-skel vbot-card_highlight">
+                        <div class="vbot-recommended-badge">RECOMMENDED</div>
+                        <div class="vbot-card-header"></div>
+                        <div class="vbot-card-price"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-card-cta"></div>
+                    </div>
+                    <div class="vbot-card vbot-skel">
+                        <div class="vbot-card-header"></div>
+                        <div class="vbot-card-price"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-card-cta"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template lwc:if={isUpgrades}>
+            <div class="vbot-wireframe">
+                <div class="vbot-banner vbot-skel">
+                    <div class="vbot-banner-image"></div>
+                    <div class="vbot-banner-content">
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-pill-row">
+                            <div class="vbot-pill"></div>
+                            <div class="vbot-pill"></div>
+                            <div class="vbot-pill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vbot-card-row">
+                    <div class="vbot-card vbot-card_product vbot-skel">
+                        <div class="vbot-product-image"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-card-cta"></div>
+                    </div>
+                    <div class="vbot-card vbot-card_product vbot-skel vbot-card_highlight">
+                        <div class="vbot-recommended-badge">86% FIT</div>
+                        <div class="vbot-product-image"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-card-cta"></div>
+                    </div>
+                    <div class="vbot-card vbot-card_product vbot-skel">
+                        <div class="vbot-product-image"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-skel-line"></div>
+                        <div class="vbot-skel-line vbot-skel-line_short"></div>
+                        <div class="vbot-card-cta"></div>
+                    </div>
+                </div>
+                <div class="vbot-reasoning vbot-skel">
+                    <div class="vbot-skel-line vbot-skel-line_short"></div>
+                    <div class="vbot-skel-line"></div>
+                    <div class="vbot-skel-line"></div>
+                    <div class="vbot-skel-line vbot-skel-line_short"></div>
+                </div>
+            </div>
+        </template>
+
+        <template lwc:if={isConnectedAsset}>
+            <div class="vbot-wireframe">
+                <div class="vbot-kpi-row">
+                    <div class="vbot-kpi vbot-skel">
+                        <div class="vbot-kpi-donut"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                    <div class="vbot-kpi vbot-skel">
+                        <div class="vbot-kpi-donut"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                    <div class="vbot-kpi vbot-skel">
+                        <div class="vbot-kpi-donut"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                    <div class="vbot-kpi vbot-skel">
+                        <div class="vbot-kpi-donut"></div>
+                        <div class="vbot-skel-line vbot-skel-line_tiny"></div>
+                    </div>
+                </div>
+                <div class="vbot-chart vbot-skel">
+                    <svg viewBox="0 0 400 120" preserveAspectRatio="none" class="vbot-chart-svg">
+                        <polyline
+                            points="0,90 50,70 100,80 150,55 200,60 250,40 300,45 350,30 400,35"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            opacity="0.4"
+                        ></polyline>
+                    </svg>
+                </div>
+                <div class="vbot-lawn-map vbot-skel">
+                    <svg viewBox="0 0 200 100" class="vbot-lawn-svg">
+                        <rect x="0" y="0" width="200" height="100" fill="currentColor" opacity="0.15"></rect>
+                        <rect x="20" y="20" width="40" height="30" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="120" y="50" width="50" height="35" fill="currentColor" opacity="0.4"></rect>
+                    </svg>
+                </div>
+            </div>
+        </template>
+
+        <template lwc:if={isGeneric}>
+            <div class="vbot-wireframe">
+                <div class="vbot-card vbot-skel">
+                    <div class="vbot-skel-line vbot-skel-line_short"></div>
+                    <div class="vbot-skel-line"></div>
+                    <div class="vbot-skel-line"></div>
+                    <div class="vbot-skel-line vbot-skel-line_short"></div>
+                </div>
+            </div>
+        </template>
     </div>
 </template>
