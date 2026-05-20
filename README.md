@@ -32,6 +32,22 @@ dass sie in jeder anderen Demo wiederverwendet werden können.
 
 ---
 
+## Inhalt
+
+- [Story](#story) — das Drehbuch der Demo
+- [Live-Demo-Org](#live-demo-org-nur-referenz) — die Org, in der das Repo entstand
+- [Repo-Struktur](#repo-struktur)
+- [Setup für eine eigene Org](#setup-für-eine-eigene-org) — 5 Befehle + 2 manuelle Schritte
+- [Architektur in einem Bild](#architektur-in-einem-bild)
+- [Komponenten-Katalog](#komponenten-katalog) — 27 LWCs + 4 Apex-Controller mit Re-Use-Stufe
+- [Datenmodell](#datenmodell)
+- [Demo-Run](#demo-run) — Checkliste vor jedem Live-Auftritt
+- [Product Imagery](#product-imagery), [Easter Egg](#easter-egg)
+- [Bekannte Limitierungen](#bekannte-limitierungen)
+- [Reuse-Reminder](#reuse-reminder) — wenn du Komponenten klauen willst
+
+---
+
 ## Story
 
 Ein Field-Service-Spezialist besucht **Familie Schmidt** in Berlin, deren
@@ -55,31 +71,83 @@ hervorhebt.
 
 ---
 
-## Live-Org & Repo
+## Live-Demo-Org (nur Referenz)
+
+Die folgenden Werte gelten **nur** für die Demo-Org, in der das Repo
+entstanden ist. Wenn du das Repo in deine eigene Org klonst, deployst und
+seedest, bekommst du eigene Record-IDs — siehe „Setup für eine eigene Org"
+unten.
 
 | Was | Wo |
 |---|---|
-| Org | `https://cap-de-mfg-awt-demo-dev-ed.develop.my.salesforce.com` (Manufacturing Cloud Developer Edition, DEU90) |
+| Org-Typ | Manufacturing Cloud Developer Edition, Instance DEU90 |
+| Org-URL | <https://cap-de-mfg-awt-demo-dev-ed.develop.my.salesforce.com> |
 | User | `christopher.ramm@cap-de-mfg-awt-demo.com` |
-| Repo | <https://github.com/rammc/cap-de-mfg-awt-demo> |
 | Demo-WO | `/lightning/r/WorkOrder/0WOWz000004EjDFOA0/view` |
 | Demo-Asset | `/lightning/r/Asset/02iWz0000070dQLIAY/view` |
 
 ---
 
-## Setup in 5 Befehlen
+## Repo-Struktur
 
-```bash
-sf org login web --alias vbot
-sf project deploy start --source-dir force-app --target-org vbot --test-level NoTestRun
-sf org assign permset --name VBOT_Demo_Access --target-org vbot
-sf apex run --file scripts/apex/seed-vbot-demo.apex --target-org vbot
-sf org open --target-org vbot --path /lightning/r/WorkOrder/0WOWz000004EjDFOA0/view
+```
+cap-de-mfg-awt-demo/
+├── force-app/main/default/
+│   ├── classes/              # 4 Apex Controller + 4 Test-Klassen
+│   ├── flexipages/           # 2 Lightning Record Pages (WO + Asset)
+│   ├── lwc/                  # 27 LWC-Bundles
+│   ├── messageChannels/      # VBOT_HighlightChannel (LMS)
+│   ├── objects/              # Custom Fields, Custom Object, ListViews,
+│   │                         # Quick-Action auf WorkOrder
+│   ├── permissionsets/       # VBOT_Demo_Access
+│   └── staticresources/      # cgTokens.css + 6 Produkt-Bilder
+├── scripts/apex/
+│   ├── seed-vbot-demo.apex   # Idempotenter Seed der Demo-Daten
+│   └── reset-vbot-demo.apex  # Inverse: löscht alle VBOT-Records
+├── docs/
+│   ├── DEMO_CHECKLIST.md     # Pre-Demo-Runbook (30 Min vorher / 5 Min vorher / Notfall)
+│   └── backup-screenshots.md # Fallback-Workflow für Org-Ausfälle
+├── discovery/                # Phase-0-Snapshot der Org (Baseline für Drift-Diffs)
+├── CLAUDE.md                 # Kontext-File für AI-assisted edits
+├── README.md                 # Diese Datei
+└── sfdx-project.json         # API v66.0, default package "force-app"
 ```
 
-Lightning Record Pages müssen einmal manuell als „Org Default" aktiviert
-werden — Setup → Object Manager → **Work Order** / **Asset** → Lightning
-Record Pages → `VBOT … Record Page` → **Activation** → Desktop + Phone.
+---
+
+## Setup für eine eigene Org
+
+```bash
+# 1) Login (für Trailhead-Playgrounds: --instance-url https://login.salesforce.com)
+sf org login web --alias vbot
+
+# 2) Metadata deployen
+sf project deploy start --source-dir force-app --target-org vbot --test-level NoTestRun
+
+# 3) Permission Set dem eigenen User zuweisen
+sf org assign permset --name VBOT_Demo_Access --target-org vbot
+
+# 4) Demo-Daten seeden (idempotent)
+sf apex run --file scripts/apex/seed-vbot-demo.apex --target-org vbot
+
+# 5) (optional) alle 4 Apex-Test-Klassen ausführen
+sf apex run test --class-names WarrantyAdvisorControllerTest ProductUpgradeControllerTest \
+                                AssetTelemetryControllerTest DemoResetControllerTest \
+                 --target-org vbot --result-format human --code-coverage
+```
+
+**Zwei manuelle Schritte in der Setup-UI** — Salesforce erlaubt das nicht via Metadata API:
+
+1. **Lightning Record Pages aktivieren** — Setup → Object Manager → **Work Order** /
+   **Asset** → Lightning Record Pages → `VBOT … Record Page` → **Activation** →
+   Org Default → Desktop + Phone → Save.
+2. **Quick-Action „VBOT Demo Reset"** auf das WO-Layout legen — Setup → Object
+   Manager → **Work Order** → Page Layouts → `Work Order Layout` → Mobile &
+   Lightning Actions → `VBOT Demo Reset` ins Highlights-Panel ziehen → Save.
+
+**Demo-Records finden** (nach dem Seed): App Launcher → Work Orders / Assets →
+ListView „VBOT Work Orders" bzw. „VBOT Assets". Die Record-IDs in der
+„Live-Demo-Org"-Tabelle weiter oben gelten **nur** für die Christopher-Org.
 
 ---
 
@@ -118,10 +186,10 @@ Record Pages → `VBOT … Record Page` → **Activation** → Desktop + Phone.
                            └─────────────────────────────────────┘
 
                            ┌─────────────────────────────────────┐
-   Cross-cutting           │  verdantBotEasterEgg (singleton)    │
-                           │  vbotTabPlaceholder (legacy)        │
-                           │  loadingSkeleton                    │
-                           │  emptyState · errorState            │
+   Cross-cutting LWCs      │  verdantBotEasterEgg                │
+   (in 3 Wrapper-Templates │  loadingSkeleton                    │
+    eingebettet oder       │  emptyState · errorState            │
+    separat deployed)      │  vbotTabPlaceholder (Phase-1-Stand) │
                            │  demoResetAction (Quick Action)     │
                            └─────────────────────────────────────┘
 ```
@@ -492,9 +560,12 @@ Die `VBOT_Hero_Image_Url__c`-Felder werden vom Seed-Skript auf
 
 Doppelklick auf eines der drei versteckten Trigger-Elemente:
 
-- Produktbild im **Asset-Context-Banner** (Upgrades-Tab)
-- **Battery-Donut** in den KPI-Tiles (Asset-Page)
-- **iPhone-Frame** im Mobile-Mirror (Asset-Page)
+- **Produktbild im Asset-Context-Banner** — auf der WorkOrder-Page,
+  oben im `productUpgradeStudio`
+- **Battery-Donut** in den KPI-Tiles — auf der Asset-Page,
+  links oben im `assetHealthHeader`
+- **iPhone-Frame** im Mobile-Mirror — auf der Asset-Page,
+  rechts im `mobilePreviewMirror`
 
 …lässt einen kleinen SVG-VerdantBot diagonal über den Bildschirm fahren,
 hinterlässt eine kurz aufleuchtende grüne Mähbahn, dreht sich in der Mitte
@@ -532,10 +603,10 @@ Vollständige Stolperfallen-Liste in [`CLAUDE.md`](CLAUDE.md).
 
 | Layer | Was |
 |---|---|
-| Datenmodell | 5 Custom Fields × 4 Standard-Objekte + 1 Custom Object + Permission Set |
-| Apex | 4 Controller (`WarrantyAdvisor`, `ProductUpgrade`, `AssetTelemetry`, `DemoReset`) + Test-Klassen, Coverage 91–99 % |
-| LWC | 26 Bundles (4 Wrapper, 17 Sub, 5 Cross-cutting) |
-| Cross-cutting | 1 Lightning Message Channel, 1 Static Resource (CSS-Tokens), 6 Product-Image Static Resources |
+| Datenmodell | 21 Custom Fields auf 4 Standard-Objekten (Asset, WorkOrder, ServiceContract, Product2) + 1 Custom Object `VBOT_Asset_Telemetry__c` mit 9 Feldern + Permission Set |
+| Apex | 4 Controller (`WarrantyAdvisor`, `ProductUpgrade`, `AssetTelemetry`, `DemoReset`) + Test-Klassen, Coverage 91–99 % (21/21 Tests grün) |
+| LWC | 27 Bundles · 3 Use-Case-Wrapper · 17 Use-Case-Subs · 7 Cross-cutting (Agent-Bubble, Easter-Egg, Placeholder, 3 State-Cards, Demo-Reset-Action) |
+| Cross-cutting | 1 Lightning Message Channel · 1 CSS-Token-Static-Resource (`cgTokens`) · 6 Product-Image-Static-Resources |
 | Tooling | SFDX, sf CLI v2, Husky + Prettier + ESLint + Jest (Phase-1-Template-Stand) |
 
 ---
@@ -547,7 +618,7 @@ Commit im Repo nachvollziehbar:
 
 | Phase | Inhalt | Commit-Range |
 |---|---|---|
-| 1 | Datenmodell, Demo-Daten, Permission Set, Placeholder-Pages | initial → `eaa1c15` |
+| 1 | Datenmodell, Demo-Daten, Permission Set, Placeholder-Pages | `4be5a14` |
 | 1.5 | Polished Wireframe-Placeholder, 5/5 ListViews | `d2be89d` |
 | 2 | Service & Warranty (Wrapper + 5 Subs + `WarrantyAdvisorController`) | `cab61f8` |
 | 3 | Upgrades (Wrapper + 6 Subs + `ProductUpgradeController`) | `5ec6223` |
@@ -567,11 +638,14 @@ Wenn du Komponenten in eine andere Demo / einen anderen Mandanten ziehst:
 2. **Apex-Controller** sind `with sharing` und lesen ausschließlich
    Standard-Objekte + Custom-Fields. Bei Übernahme: VBOT-Felder durch eigene
    Felder ersetzen.
-3. **LMS-Channel** muss separat deployed werden (`messageChannels/`-Ordner).
-4. **Lightning Message Service** funktioniert ausschließlich
-   FlexiPage-intern — über Apps hinweg nicht ohne weiteres.
-5. **Permission Set** komplett übernehmen oder die `classAccesses` und
-   `fieldPermissions` selektiv in einen bestehenden PermSet überführen.
+3. **LMS-Channel** mit deployen (`force-app/main/default/messageChannels/`).
+   Lightning Message Service erreicht nur Komponenten **auf derselben
+   Lightning Page** (sibling-Komponenten auf einer FlexiPage oder App
+   Page) — nicht über Tab- oder Window-Grenzen hinweg.
+4. **Permission Set** komplett übernehmen oder selektiv `classAccesses`
+   und `fieldPermissions` in einen bestehenden PermSet überführen.
+5. **Quick-Action-Layout-Schritt** nicht vergessen — Metadata-API kann
+   die Sichtbarkeit auf dem Page Layout nicht setzen.
 
 ---
 
