@@ -23,6 +23,16 @@
                 <identifier>productUpgradeStudioInstance</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>c:agentNudgeBubble</componentName>
+                <identifier>agentNudgeBubbleWoInstance</identifier>
+                <componentInstanceProperties>
+                    <name>context</name>
+                    <value>warranty</value>
+                </componentInstanceProperties>
+            </componentInstance>
+        </itemInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

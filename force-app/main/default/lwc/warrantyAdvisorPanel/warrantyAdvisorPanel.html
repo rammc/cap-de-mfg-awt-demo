@@ -28,9 +28,11 @@
         </template>
 
         <template lwc:if={hasData}>
-            <c-coverage-gap-visualizer coverages={data.coverages}></c-coverage-gap-visualizer>
+            <div class={coverageClass}>
+                <c-coverage-gap-visualizer coverages={data.coverages}></c-coverage-gap-visualizer>
+            </div>
 
-            <div class="card-row">
+            <div class={cardsClass}>
                 <template for:each={options} for:item="opt">
                     <c-contract-option-card
                         key={opt.contractId}

@@ -1,0 +1,10 @@
+<template>
+    <div class="error" role="alert">
+        <lightning-icon icon-name="utility:error" variant="error" size="small" alternative-text="Fehler" class="error__icon"></lightning-icon>
+        <div class="error__text">
+            <span class="error__title">{title}</span>
+            <span class="error__message">{message}</span>
+        </div>
+        <lightning-button label={retryLabel} variant="neutral" onclick={handleRetry}></lightning-button>
+    </div>
+</template>

@@ -38,10 +38,14 @@
             <div class="grid">
                 <div class="grid__main">
                     <c-asset-health-header kpis={kpis}></c-asset-health-header>
-                    <c-usage-timeline-chart points={timeline} range={range}></c-usage-timeline-chart>
+                    <div class={chartClass}>
+                        <c-usage-timeline-chart points={timeline} range={range}></c-usage-timeline-chart>
+                    </div>
                     <div class="grid__row">
                         <c-lawn-health-map zones={lawnZones} property-size-sqm={propertySize}></c-lawn-health-map>
-                        <c-predictive-maintenance-card forecast={forecast}></c-predictive-maintenance-card>
+                        <div class={maintenanceClass}>
+                            <c-predictive-maintenance-card forecast={forecast}></c-predictive-maintenance-card>
+                        </div>
                     </div>
                 </div>
                 <aside class="grid__side">

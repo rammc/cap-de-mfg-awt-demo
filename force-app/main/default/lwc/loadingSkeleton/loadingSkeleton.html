@@ -1,0 +1,23 @@
+<template>
+    <template lwc:if={isKpiRow}>
+        <div class="row row_four">
+            <div class="block block_tile vbot-shimmer"></div>
+            <div class="block block_tile vbot-shimmer"></div>
+            <div class="block block_tile vbot-shimmer"></div>
+            <div class="block block_tile vbot-shimmer"></div>
+        </div>
+    </template>
+    <template lwc:if={isBanner}>
+        <div class="block block_banner vbot-shimmer"></div>
+    </template>
+    <template lwc:if={isChart}>
+        <div class="block block_chart vbot-shimmer"></div>
+    </template>
+    <template lwc:if={isCard}>
+        <div class="row row_three">
+            <div class="block block_card vbot-shimmer"></div>
+            <div class="block block_card vbot-shimmer"></div>
+            <div class="block block_card vbot-shimmer"></div>
+        </div>
+    </template>
+</template>

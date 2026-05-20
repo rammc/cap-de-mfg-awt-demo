@@ -85,11 +85,17 @@ sf apex run --file scripts/apex/reset-vbot-demo.apex --target-org <alias>
   `runtime_chatter:feedContainer` sind in der Developer Edition nicht
   deploybar. Sidebar bleibt leer.
 
+## Demo-Run
+
+Vor jedem Live-Run: **[`docs/DEMO_CHECKLIST.md`](docs/DEMO_CHECKLIST.md)** abarbeiten. Backup-Strategie für Org-Ausfälle: **[`docs/backup-screenshots.md`](docs/backup-screenshots.md)**.
+
+Quick-Reset während der Vorbereitung: Quick-Action **VBOT Demo Reset** auf der Demo-WorkOrder (oder `scripts/apex/reset-vbot-demo.apex` + `scripts/apex/seed-vbot-demo.apex` in Kombi).
+
 ## Phase-Status
 
 - [x] Phase 1: Setup, Datenmodell, Demo-Daten, Permission Set, Placeholder-Pages
 - [x] Phase 1.5: Polished Wireframe-Placeholder, 5/5 ListViews
-- [ ] Phase 2: LWCs Service & Warranty (ggf. Tabset via UI Builder)
-- [ ] Phase 3: LWCs Upgrades
-- [ ] Phase 4: LWCs Connected Asset + Mobile-Mockup
-- [ ] Phase 5: Polish, Backup-Screenshots, Demo-Skript
+- [x] Phase 2: Service & Warranty LWCs (warrantyAdvisorPanel + 5 Subs + Apex)
+- [x] Phase 3: Upgrades LWCs (productUpgradeStudio + 6 Subs + Apex)
+- [x] Phase 4: Connected Asset LWCs (connectedAssetDashboard + 6 Subs + Apex)
+- [x] Phase 5: agentNudgeBubble + LMS-Highlight + shared States + Demo-Reset

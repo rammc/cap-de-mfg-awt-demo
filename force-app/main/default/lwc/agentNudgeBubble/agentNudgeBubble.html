@@ -1,0 +1,52 @@
+<template>
+    <template lwc:if={showBubble}>
+        <button type="button" class={bubbleClass} onclick={handleOpen} aria-label="Agent öffnen">
+            <lightning-icon icon-name="utility:einstein" size="medium" alternative-text="Agent" class="bubble__icon"></lightning-icon>
+            <span class="bubble__badge" aria-hidden="true">1</span>
+        </button>
+    </template>
+
+    <section class={panelClass} role="dialog" aria-label="Agentforce Chat">
+        <header class="panel__header">
+            <div class="panel__id">
+                <lightning-icon icon-name="utility:einstein" size="x-small" alternative-text="" class="panel__avatar"></lightning-icon>
+                <div class="panel__id-text">
+                    <span class="panel__name">{agentTitle}</span>
+                    <span class="panel__status"><span class="status-dot"></span>Online</span>
+                </div>
+            </div>
+            <lightning-button-icon
+                icon-name="utility:close"
+                alternative-text="Schließen"
+                onclick={handleClose}
+                variant="bare"
+            ></lightning-button-icon>
+        </header>
+
+        <div class="panel__messages">
+            <template for:each={historyItems} for:item="m">
+                <div key={m.id} class={m.cls}>{m.text}</div>
+            </template>
+            <template lwc:if={showTyping}>
+                <div class="msg msg_agent msg_typing">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </template>
+        </div>
+
+        <ul class="panel__chips" role="list">
+            <template for:each={prompts} for:item="p">
+                <li key={p.id}>
+                    <button type="button" class="chip" data-id={p.id} onclick={handlePromptClick}>{p.label}</button>
+                </li>
+            </template>
+        </ul>
+
+        <footer class="panel__footer">
+            <input class="panel__input" type="text" placeholder="Frage stellen…" disabled />
+            <span class="panel__powered">Powered by Agentforce · Capgemini</span>
+        </footer>
+    </section>
+</template>

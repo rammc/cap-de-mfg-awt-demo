@@ -1,0 +1,24 @@
+<template>
+    <div class="reset-card" role="dialog" aria-label="Demo zurücksetzen">
+        <header class="reset-card__header">
+            <lightning-icon icon-name="utility:refresh" size="small" alternative-text="" class="reset-card__icon"></lightning-icon>
+            <h2 class="reset-card__title">Demo-Daten zurücksetzen?</h2>
+        </header>
+
+        <p class="reset-card__message">
+            Setzt Telemetry, Service-Contract-Status und Recommended-Action auf den Initial-Zustand zurück. Idempotent — kann beliebig oft ausgeführt werden.
+        </p>
+
+        <ul class="reset-card__list">
+            <li>WorkOrder Status → „In Progress"</li>
+            <li>Recommended Action → „Battery Replacement"</li>
+            <li>Letzte 7 Telemetry-Datensätze neu seeden</li>
+            <li>Basic Service Contract Laufzeit auffrischen</li>
+        </ul>
+
+        <footer class="reset-card__footer">
+            <lightning-button label="Abbrechen" variant="neutral" onclick={handleCancel} disabled={busy}></lightning-button>
+            <lightning-button label="Reset ausführen" variant="brand" onclick={handleConfirm} disabled={busy}></lightning-button>
+        </footer>
+    </div>
+</template>

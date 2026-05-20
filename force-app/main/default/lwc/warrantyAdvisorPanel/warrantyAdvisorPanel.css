@@ -77,6 +77,21 @@
     color: var(--cg-charcoal);
 }
 
+.highlight-host {
+    border-radius: var(--cg-radius);
+    transition: box-shadow 0.4s ease;
+}
+.is-highlighted {
+    box-shadow: 0 0 0 3px var(--cg-velocity-blue), 0 0 24px rgba(18, 171, 219, 0.45);
+    animation: vbot-highlight-pulse 1.5s ease-in-out;
+    border-radius: var(--cg-radius);
+}
+@keyframes vbot-highlight-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(18, 171, 219, 0); }
+    30% { box-shadow: 0 0 0 4px var(--cg-velocity-blue), 0 0 24px rgba(18, 171, 219, 0.55); }
+    70% { box-shadow: 0 0 0 3px var(--cg-velocity-blue), 0 0 18px rgba(18, 171, 219, 0.35); }
+}
+
 @media (max-width: 1024px) {
     .card-row, .skeleton-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

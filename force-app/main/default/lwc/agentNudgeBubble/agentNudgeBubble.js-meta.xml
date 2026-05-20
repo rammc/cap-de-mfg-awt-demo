@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>VBOT Agent Nudge Bubble</masterLabel>
+    <description>Floating Agentforce chat bubble. Publishes highlight requests via VBOT_HighlightChannel that wrapper LWCs subscribe to.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+                name="context"
+                label="Context"
+                type="String"
+                default="auto"
+                description="One of: auto, warranty, upgrades, telemetry. 'auto' resolves by record type."
+            />
+            <objects>
+                <object>WorkOrder</object>
+                <object>Asset</object>
+            </objects>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

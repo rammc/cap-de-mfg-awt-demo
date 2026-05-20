@@ -1,6 +1,11 @@
 import { LightningElement, api, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
+import { subscribe, unsubscribe, MessageContext } from 'lightning/messageService';
+import HIGHLIGHT_CHANNEL from '@salesforce/messageChannel/VBOT_HighlightChannel__c';
 import getAdvisorData from '@salesforce/apex/WarrantyAdvisorController.getAdvisorData';
+
+const HIGHLIGHT_DURATION_MS = 1500;
+const HIGHLIGHT_TARGETS = new Set(['coverageGapVisualizer', 'contractOptionCard']);
 
 export default class WarrantyAdvisorPanel extends LightningElement {
     @api recordId;
@@ -10,7 +15,12 @@ export default class WarrantyAdvisorPanel extends LightningElement {
     toastVisible = false;
     selectedContract;
     confirmedContractName = '';
+    highlightTarget;
     _wired;
+    _subscription;
+    _highlightTimer;
+
+    @wire(MessageContext) messageContext;
 
     @wire(getAdvisorData, { workOrderId: '$recordId' })
     wiredAdvisor(result) {
@@ -96,5 +106,35 @@ export default class WarrantyAdvisorPanel extends LightningElement {
         if (this._wired) {
             refreshApex(this._wired);
         }
+    }
+
+    connectedCallback() {
+        if (!this._subscription && this.messageContext) {
+            this._subscription = subscribe(this.messageContext, HIGHLIGHT_CHANNEL, (msg) => this._handleHighlight(msg));
+        }
+    }
+    renderedCallback() {
+        if (!this._subscription && this.messageContext) {
+            this._subscription = subscribe(this.messageContext, HIGHLIGHT_CHANNEL, (msg) => this._handleHighlight(msg));
+        }
+    }
+    disconnectedCallback() {
+        if (this._subscription) {
+            unsubscribe(this._subscription);
+            this._subscription = null;
+        }
+        if (this._highlightTimer) { clearTimeout(this._highlightTimer); }
+    }
+    _handleHighlight(message) {
+        if (!message || !HIGHLIGHT_TARGETS.has(message.target)) return;
+        this.highlightTarget = message.target;
+        if (this._highlightTimer) clearTimeout(this._highlightTimer);
+        this._highlightTimer = setTimeout(() => { this.highlightTarget = null; }, HIGHLIGHT_DURATION_MS);
+    }
+    get coverageClass() {
+        return this.highlightTarget === 'coverageGapVisualizer' ? 'highlight-host is-highlighted' : 'highlight-host';
+    }
+    get cardsClass() {
+        return this.highlightTarget === 'contractOptionCard' ? 'card-row is-highlighted' : 'card-row';
     }
 }

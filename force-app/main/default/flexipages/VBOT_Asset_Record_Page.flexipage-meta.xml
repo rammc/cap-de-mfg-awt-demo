@@ -17,6 +17,16 @@
                 <identifier>connectedAssetDashboardInstance</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>c:agentNudgeBubble</componentName>
+                <identifier>agentNudgeBubbleAssetInstance</identifier>
+                <componentInstanceProperties>
+                    <name>context</name>
+                    <value>telemetry</value>
+                </componentInstanceProperties>
+            </componentInstance>
+        </itemInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

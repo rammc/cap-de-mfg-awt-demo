@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>VBOT Loading Skeleton</masterLabel>
+    <description>Shared shimmer skeleton in 4 variants: card / banner / kpi-row / chart. Used by all three Phase 2-4 wrapper LWCs.</description>
+</LightningComponentBundle>

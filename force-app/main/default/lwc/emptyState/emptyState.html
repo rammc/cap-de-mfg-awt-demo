@@ -1,0 +1,10 @@
+<template>
+    <article class="empty" role="status">
+        <lightning-icon icon-name={icon} size="medium" alternative-text="" class="empty__icon"></lightning-icon>
+        <h3 class="empty__title">{title}</h3>
+        <p class="empty__message">{message}</p>
+        <template lwc:if={hasCta}>
+            <lightning-button label={ctaLabel} variant="neutral" onclick={handleCta}></lightning-button>
+        </template>
+    </article>
+</template>

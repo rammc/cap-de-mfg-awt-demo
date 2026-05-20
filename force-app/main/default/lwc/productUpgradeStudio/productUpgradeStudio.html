@@ -28,13 +28,17 @@
         <template lwc:if={hasData}>
             <c-asset-context-banner asset={data.asset}></c-asset-context-banner>
 
-            <c-upgrade-recommendation-grid
-                options={data.options}
-                oncomparespecs={handleCompare}
-                onaddtoquote={handleAddToQuote}
-            ></c-upgrade-recommendation-grid>
+            <div class={gridClass}>
+                <c-upgrade-recommendation-grid
+                    options={data.options}
+                    oncomparespecs={handleCompare}
+                    onaddtoquote={handleAddToQuote}
+                ></c-upgrade-recommendation-grid>
+            </div>
 
-            <c-reasoning-explainer reasoning={data.reasoning}></c-reasoning-explainer>
+            <div class={reasoningClass}>
+                <c-reasoning-explainer reasoning={data.reasoning}></c-reasoning-explainer>
+            </div>
         </template>
 
         <c-spec-diff-comparator
