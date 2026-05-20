@@ -39,6 +39,8 @@
     position: relative;
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    user-select: none;
 }
 .donut { width: 80px; height: 80px; display: block; }
 .donut__bg { stroke: var(--cg-grey-200); }

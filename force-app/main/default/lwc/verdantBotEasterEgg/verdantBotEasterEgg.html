@@ -1,0 +1,40 @@
+<template>
+    <template lwc:if={isActive}>
+        <div class="vbot-overlay" aria-hidden="true">
+            <svg class={trailClass} viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path
+                    class="vbot-trail__path"
+                    d="M 0,100 Q 30,80 50,50 T 100,0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    vector-effect="non-scaling-stroke"
+                ></path>
+                <circle class="vbot-trail__fleck" cx="20" cy="88" r="1.2" fill="currentColor"></circle>
+                <circle class="vbot-trail__fleck" cx="42" cy="62" r="1.2" fill="currentColor"></circle>
+                <circle class="vbot-trail__fleck" cx="68" cy="32" r="1.2" fill="currentColor"></circle>
+                <circle class="vbot-trail__fleck" cx="85" cy="14" r="1.2" fill="currentColor"></circle>
+            </svg>
+
+            <div class={containerClass} onclick={handleRobotClick}>
+                <template lwc:if={showSpeech}>
+                    <div class="vbot-speech" role="status">Hallo, Christopher! 🌱</div>
+                </template>
+                <svg viewBox="0 0 80 60" class="vbot-mower-svg" xmlns="http://www.w3.org/2000/svg" aria-label="VerdantBot">
+                    <ellipse cx="40" cy="30" rx="32" ry="24" fill="#0070AD"></ellipse>
+                    <ellipse cx="32" cy="22" rx="14" ry="8" fill="#12ABDB" opacity="0.5"></ellipse>
+                    <rect x="20" y="6" width="40" height="6" rx="3" fill="#12ABDB"></rect>
+                    <circle cx="28" cy="9" r="2" fill="white"></circle>
+                    <circle cx="52" cy="9" r="2" fill="white"></circle>
+                    <path d="M 33 28 L 40 38 L 47 28" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+                    <rect x="2" y="22" width="6" height="16" rx="2" fill="#1F2A37"></rect>
+                    <rect x="72" y="22" width="6" height="16" rx="2" fill="#1F2A37"></rect>
+                    <line x1="40" y1="6" x2="40" y2="1" stroke="#1F2A37" stroke-width="1.5"></line>
+                    <circle cx="40" cy="0.5" r="1.5" fill="#D4351C"></circle>
+                </svg>
+            </div>
+        </div>
+    </template>
+</template>

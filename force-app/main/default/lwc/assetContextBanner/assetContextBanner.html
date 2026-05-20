@@ -1,6 +1,6 @@
 <template>
     <article class="banner">
-        <div class="banner__image">
+        <div class="banner__image" ondblclick={handleEasterTrigger} title="Klick mich zweimal">
             <template lwc:if={hasImage}>
                 <img src={asset.productImageUrl} alt={asset.productName} class="banner__img" />
             </template>

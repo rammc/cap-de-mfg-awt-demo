@@ -3,7 +3,7 @@
         <template for:each={tiles} for:item="t">
             <article key={t.key} class={t.cls} role="listitem">
                 <template lwc:if={t.showDonut}>
-                    <div class="donut-wrap">
+                    <div class="donut-wrap" ondblclick={handleEasterTrigger} title="Klick mich zweimal">
                         <svg class="donut" viewBox="0 0 80 80" role="img" aria-label={t.donutText}>
                             <circle class="donut__bg" cx="40" cy="40" r="36" stroke-width="8" fill="none"></circle>
                             <circle

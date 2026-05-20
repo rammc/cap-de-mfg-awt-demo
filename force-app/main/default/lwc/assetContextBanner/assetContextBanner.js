@@ -32,4 +32,12 @@ export default class AssetContextBanner extends LightningElement {
             ? `Firmware: ${this.asset.firmwareVersion}`
             : 'Firmware: —';
     }
+
+    handleEasterTrigger() {
+        try {
+            window.dispatchEvent(new CustomEvent('verdantbotdriveby', {
+                detail: { triggerSource: 'assetContextBanner' }
+            }));
+        } catch (_) { /* ignore */ }
+    }
 }

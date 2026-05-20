@@ -24,6 +24,8 @@
     padding: 14px;
     box-shadow: 0 24px 48px rgba(15, 23, 42, 0.28), inset 0 0 0 2px #1F2937;
     position: relative;
+    cursor: pointer;
+    user-select: none;
 }
 
 .phone__notch {

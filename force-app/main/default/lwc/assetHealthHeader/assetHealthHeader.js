@@ -7,6 +7,14 @@ const DONUT_CIRCUMFERENCE = 226;
 export default class AssetHealthHeader extends LightningElement {
     @api kpis = [];
 
+    handleEasterTrigger() {
+        try {
+            window.dispatchEvent(new CustomEvent('verdantbotdriveby', {
+                detail: { triggerSource: 'assetHealthHeader' }
+            }));
+        } catch (_) { /* ignore */ }
+    }
+
     get tiles() {
         return (this.kpis || []).map((k) => {
             const isBattery = k.key === 'battery';

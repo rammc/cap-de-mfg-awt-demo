@@ -39,6 +39,14 @@ export default class MobilePreviewMirror extends LightningElement {
         return `${this.contractName} läuft in ${this.contractDays} Tagen ab`;
     }
 
+    handleEasterTrigger() {
+        try {
+            window.dispatchEvent(new CustomEvent('verdantbotdriveby', {
+                detail: { triggerSource: 'mobilePreviewMirror' }
+            }));
+        } catch (_) { /* ignore */ }
+    }
+
     get zones() {
         return (this.mirrorData?.lawnZones || []).map((z) => {
             const c = colorFor(z.healthScore);
