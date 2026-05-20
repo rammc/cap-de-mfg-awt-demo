@@ -5,6 +5,14 @@
 Manufacturing Cloud **Developer Edition**, **nicht resetbar**. Alle Operationen
 müssen idempotent sein. Org-Alias: `christopher.ramm@cap-de-mfg-awt-demo.com`.
 
+## Product Imagery
+
+- 5 Produkt-Renderings: PNG-Static-Resources (`vbot_e150`, `vbot_c300`,
+  `vbot_c500`, `vbot_x800`, `vbot_bat_plus`) — AI-generiert, 1024×1024
+- 1 Software-Icon: `vbot_lawn_ai` als handgezeichnete SVG
+- Bei Änderungen: Static Resource tauschen → Apex-Seed re-run
+  (`sf apex run --file scripts/apex/seed-vbot-demo.apex …`) → Browser hard-reload
+
 ## Konventionen
 
 - Custom Metadata Prefix: `VBOT_`

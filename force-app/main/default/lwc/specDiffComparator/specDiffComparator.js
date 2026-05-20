@@ -39,6 +39,12 @@ export default class SpecDiffComparator extends LightningElement {
         return `${cur} vs. ${up}`;
     }
 
+    get currentImage() { return this.currentProduct?.heroImageUrl; }
+    get upgradeImage() { return this.selectedUpgrade?.heroImageUrl; }
+    get hasImages() { return !!(this.currentImage || this.upgradeImage); }
+    get currentName() { return this.currentProduct?.name || 'Aktuell'; }
+    get upgradeName() { return this.selectedUpgrade?.name || 'Upgrade'; }
+
     get rows() {
         const curSpecs = this._mapSpecs(this.currentProduct?.specs);
         const upSpecs = this._mapSpecs(this.selectedUpgrade?.specs);

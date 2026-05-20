@@ -12,6 +12,34 @@
             </header>
 
             <div class="body">
+                <template lwc:if={hasImages}>
+                    <div class="hero-row">
+                        <div class="hero-cell">
+                            <div class="hero-image">
+                                <template lwc:if={currentImage}>
+                                    <img src={currentImage} alt={currentName}/>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-icon icon-name="utility:product" size="medium" alternative-text=""></lightning-icon>
+                                </template>
+                            </div>
+                            <span class="hero-label hero-label_current">{currentName}</span>
+                        </div>
+                        <div class="hero-arrow">→</div>
+                        <div class="hero-cell">
+                            <div class="hero-image hero-image_upgrade">
+                                <template lwc:if={upgradeImage}>
+                                    <img src={upgradeImage} alt={upgradeName}/>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-icon icon-name="utility:product" size="medium" alternative-text=""></lightning-icon>
+                                </template>
+                            </div>
+                            <span class="hero-label hero-label_upgrade">{upgradeName}</span>
+                        </div>
+                    </div>
+                </template>
+
                 <table class="diff-table">
                     <thead>
                         <tr>

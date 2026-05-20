@@ -75,9 +75,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--cg-grey-100);
+    background: white;
+    border: 1px solid var(--cg-grey-200);
     border-radius: 8px;
-    height: 100px;
+    height: 140px;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
     --sds-c-icon-color-foreground-default: var(--cg-velocity-blue);
 }
 .hero__img {

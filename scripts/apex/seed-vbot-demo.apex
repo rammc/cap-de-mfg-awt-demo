@@ -138,6 +138,36 @@ if (!productsToInsert.isEmpty()) {
 }
 
 // ---------------------------------------------------------------------------
+// Block 4b: Hero-Image URLs (static-resource paths)
+// ---------------------------------------------------------------------------
+System.debug('--- Block 4b: Product hero images ---');
+Map<String, String> imageMap = new Map<String, String>{
+    'VBOT_E150'     => '/resource/vbot_e150',
+    'VBOT_C300'     => '/resource/vbot_c300',
+    'VBOT_C500'     => '/resource/vbot_c500',
+    'VBOT_X800'     => '/resource/vbot_x800',
+    'VBOT_BAT_PLUS' => '/resource/vbot_bat_plus',
+    'VBOT_LAWN_AI'  => '/resource/vbot_lawn_ai'
+};
+List<Product2> imageUpdates = new List<Product2>();
+for (Product2 p : [
+    SELECT Id, ProductCode, VBOT_Hero_Image_Url__c
+    FROM Product2 WHERE ProductCode LIKE 'VBOT_%'
+]) {
+    String expected = imageMap.get(p.ProductCode);
+    if (expected != null && p.VBOT_Hero_Image_Url__c != expected) {
+        p.VBOT_Hero_Image_Url__c = expected;
+        imageUpdates.add(p);
+    }
+}
+if (!imageUpdates.isEmpty()) {
+    update imageUpdates;
+    System.debug('[UPDATE] Product images: ' + imageUpdates.size() + ' records');
+} else {
+    System.debug('[SKIP-EXISTS] Product images already set');
+}
+
+// ---------------------------------------------------------------------------
 // Block 5: PricebookEntry x 6 on standard pricebook
 // ---------------------------------------------------------------------------
 System.debug('--- Block 5: PricebookEntries ---');

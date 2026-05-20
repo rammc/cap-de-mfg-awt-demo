@@ -1,0 +1,54 @@
+<svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VerdantBot Lawn-AI Software Subscription">
+  <!-- Drop shadow -->
+  <ellipse cx="80" cy="92" rx="34" ry="4" fill="#1F2A37" opacity="0.1"/>
+
+  <!-- Background card (subtle, software product feel) -->
+  <rect x="42" y="28" width="76" height="62" rx="10" fill="#0070AD" opacity="0.06"/>
+  <rect x="42" y="28" width="76" height="62" rx="10" fill="none" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+
+  <!-- Grass blades (back row) -->
+  <path d="M 56 86 Q 54 70 58 56 L 60 56 Q 58 70 60 86 Z" fill="#3F9E54" opacity="0.5"/>
+  <path d="M 104 86 Q 102 72 106 58 L 108 58 Q 106 72 108 86 Z" fill="#3F9E54" opacity="0.5"/>
+
+  <!-- Grass blades (mid row) -->
+  <path d="M 64 86 Q 62 64 66 48 L 69 48 Q 66 64 68 86 Z" fill="#3F9E54"/>
+  <path d="M 94 86 Q 92 66 96 50 L 99 50 Q 96 66 98 86 Z" fill="#3F9E54"/>
+
+  <!-- Grass blades (front row, tallest) -->
+  <path d="M 72 86 Q 70 58 76 42 L 79 42 Q 76 58 77 86 Z" fill="#3F9E54"/>
+  <path d="M 80 86 Q 78 56 84 40 L 87 40 Q 84 56 85 86 Z" fill="#3F9E54"/>
+  <path d="M 86 86 Q 84 60 90 46 L 93 46 Q 90 60 91 86 Z" fill="#3F9E54"/>
+
+  <!-- Lawn-AI scanning beam (subtle) -->
+  <path d="M 50 70 L 110 50 L 110 54 L 50 74 Z" fill="#12ABDB" opacity="0.18"/>
+
+  <!-- AI Brain/Cloud icon (top-left area) -->
+  <g transform="translate(58 42)">
+    <path d="M 0 0 Q -3 -4 1 -6 Q 2 -10 7 -8 Q 11 -10 12 -5 Q 16 -4 14 0 Q 16 4 11 4 Q 8 7 4 4 Q -2 5 0 0 Z" fill="#0070AD"/>
+    <!-- Neural network nodes -->
+    <circle cx="3" cy="-3" r="1" fill="white"/>
+    <circle cx="9" cy="-4" r="1" fill="white"/>
+    <circle cx="6" cy="0" r="1" fill="white"/>
+    <circle cx="11" cy="0" r="1" fill="white"/>
+    <line x1="3" y1="-3" x2="6" y2="0" stroke="white" stroke-width="0.5" opacity="0.6"/>
+    <line x1="9" y1="-4" x2="6" y2="0" stroke="white" stroke-width="0.5" opacity="0.6"/>
+    <line x1="9" y1="-4" x2="11" y2="0" stroke="white" stroke-width="0.5" opacity="0.6"/>
+    <line x1="6" y1="0" x2="11" y2="0" stroke="white" stroke-width="0.5" opacity="0.6"/>
+  </g>
+
+  <!-- AI Sparkle (top-right) - prominent -->
+  <g transform="translate(106 40)">
+    <path d="M 0 -8 L 2 -2 L 8 0 L 2 2 L 0 8 L -2 2 L -8 0 L -2 -2 Z" fill="#12ABDB"/>
+    <circle cx="0" cy="0" r="2" fill="white"/>
+  </g>
+  <!-- Smaller sparkles around -->
+  <g transform="translate(118 54)">
+    <path d="M 0 -3 L 0.8 -0.8 L 3 0 L 0.8 0.8 L 0 3 L -0.8 0.8 L -3 0 L -0.8 -0.8 Z" fill="#12ABDB" opacity="0.7"/>
+  </g>
+  <g transform="translate(94 32)">
+    <path d="M 0 -2.5 L 0.6 -0.6 L 2.5 0 L 0.6 0.6 L 0 2.5 L -0.6 0.6 L -2.5 0 L -0.6 -0.6 Z" fill="#12ABDB" opacity="0.6"/>
+  </g>
+
+  <!-- Tier badge text -->
+  <text x="80" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" font-weight="600" fill="#2B1A47" letter-spacing="1.5">LAWN-AI · SOFTWARE</text>
+</svg>

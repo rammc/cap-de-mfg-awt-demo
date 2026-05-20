@@ -85,6 +85,20 @@ sf apex run --file scripts/apex/reset-vbot-demo.apex --target-org <alias>
   `runtime_chatter:feedContainer` sind in der Developer Edition nicht
   deploybar. Sidebar bleibt leer.
 
+## Product Imagery
+
+Produktbilder der sechs VerdantBot-Produkte liegen als Static Resources unter
+`force-app/main/default/staticresources/`:
+
+- `vbot_e150`, `vbot_c300`, `vbot_c500`, `vbot_x800` (PNG, AI-generiert mit
+  Gemini Nano Banana 2, 1024×1024)
+- `vbot_bat_plus` (PNG, AI-generiert)
+- `vbot_lawn_ai` (SVG, handgezeichnet, transparent)
+
+Die `VBOT_Hero_Image_Url__c`-Felder der Produkte werden vom Seed-Skript
+(`scripts/apex/seed-vbot-demo.apex`) auf `/resource/<name>` gesetzt – idempotent,
+bei wiederholtem Lauf `[SKIP-EXISTS]`.
+
 ## Demo-Run
 
 Vor jedem Live-Run: **[`docs/DEMO_CHECKLIST.md`](docs/DEMO_CHECKLIST.md)** abarbeiten. Backup-Strategie für Org-Ausfälle: **[`docs/backup-screenshots.md`](docs/backup-screenshots.md)**.

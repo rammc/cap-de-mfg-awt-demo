@@ -126,6 +126,7 @@ public with sharing class ProductUpgradeController {
     private static ProductContextDTO buildCurrentProduct(Product2 p) {
         ProductContextDTO cp = new ProductContextDTO();
         cp.name = p.Name;
+        cp.heroImageUrl = p.VBOT_Hero_Image_Url__c;
         cp.specs = new List<SpecRowDTO>{
             specRow('Max. Mähleistung', formatArea(p.VBOT_Max_Area_Sqm__c)),
             specRow('Akku-Kapazität', formatWh(p.VBOT_Battery_Capacity_Wh__c)),
@@ -290,6 +291,7 @@ public with sharing class ProductUpgradeController {
 
     public class ProductContextDTO {
         @AuraEnabled public String name;
+        @AuraEnabled public String heroImageUrl;
         @AuraEnabled public List<SpecRowDTO> specs;
         @AuraEnabled public Decimal price;
     }
